@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.Models;
 
 public class CreditCardStrategy {
 }
