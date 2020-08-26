@@ -1,7 +1,7 @@
 <resources>
     <string name = "app_name">Android Pattern</string>
 
-    <string name = "label_Login">Back to Checkout</string>
+    <string name="back_to_checkout">Back to Checkout</string>
     <string name = "label_email">Email</string>
     <string name = "label_password">Password</string>
 
@@ -15,4 +15,13 @@
     <string name="credit_card">Credit Card</string>
     <string name="paypal">Paypal</string>
     <string name = "login_btn">Go Shopping</string>
+
+    <string name="credit_card">Credit Card</string>
+    <string name="paypal">Paypal</string>
+
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="expiry_date">Expiry Date (mm/yy)</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvv">cvv</string>
 </resources>
