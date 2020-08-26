@@ -1,4 +1,6 @@
 package com.androidpattern.Models;
 
-public class PaymentStrategy {
+public interface PaymentStrategy {
+	
+	public void pay(int amount);
 }
