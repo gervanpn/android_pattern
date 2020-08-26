@@ -1,21 +1,17 @@
 <resources>
-    <string name = "app_name">Android Pattern</string>
-
     <string name = "back_to_checkout">Back to Checkout</string>
     <string name = "label_email">Email</string>
     <string name = "label_password">Password</string>
-
     <string name = "password_hint">Password</string>
     <string name = "email_hint">Email</string>
-    <string name = "todo">TODO</string>
-
+    <string name = "todo">TO DO</string>
+    <string name="app_name">Go Shopping</string>
+    <string name="login_btn">Go Shopping</string>
     <string name="welcome_text">Welcome! Don\'t spend your money on other stupid apps when you can spend your money here in this superior app, please: SHOW ME THE MONEY</string>
-
     <string name = "payment_text">Total cost to pay</string>
     <string name = "credit_card">Credit Card</string>
     <string name = "paypal">Paypal</string>
     <string name = "login_btn">Go Shopping</string>
-
     <string name="email">Email</string>
     <string name="name">Name</string>
     <string name="expiry_date">Expiry Date (mm/yy)</string>
