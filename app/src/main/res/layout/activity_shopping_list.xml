@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="32dp"
-    layout>
+    android:padding="32dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="28pt"
         android:text="Select items"
-        android:layout_marginBottom="18pt"
-        android:textSize="8pt"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -40,21 +40,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/til_name"
-            android:weightSum="4.5"
-            android:layout_marginBottom="20dp">
+            android:weightSum="4.5">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                android:layout_weight="3">
 
                 <EditText
                     android:id="@+id/et_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Price"
+                    android:inputType="numberDecimal"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,27 +70,64 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Qnty"
+                    android:inputType="number"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
-        <Button
-            android:id="@+id/btn_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:layout_below="@id/ll_cost"
-            android:layout_alignParentRight="true">
-
-        </Button>
     </RelativeLayout>
 
-
     <Button
-        android:id="@+id/btn_checkout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="Checkout">
+        android:id="@+id/btn_add"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="right"
+        android:layout_marginBottom="18dp"
+        android:backgroundTintMode="screen"
+        android:backgroundTint="@color/colorAccent"
+        android:background="@drawable/ic_baseline_add">
 
     </Button>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv-label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Items"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No items selected yet!" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/btn_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:layout_gravity="end"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/colorAccent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_add_shopping_cart"/>
+
+    </LinearLayout>
 </LinearLayout>
