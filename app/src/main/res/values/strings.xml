@@ -1,15 +1,10 @@
 <resources>
     <string name="app_name">Android Pattern</string>
-<<<<<<< HEAD
     <string name="welcome_text">Welcome!
         Do not spend your money on any other stupid apps when you can spend your money in this superior app, please: SHOW ME THE MONEY</string>
     <string name="login_btn">Go Shopping</string>
-=======
-    <string name="welcome_text">Welcome! Don\'t spend your money on other stupid apps when you can spend your money here in this superior app, please: SHOW ME THE MONEY</string>
-    <string name="login_btn">Log In</string>
     <string name="payment_text">Total cost to pay</string>
     <string name="credit_card">Credit Card</string>
     <string name="paypal">Paypal</string>
     <string name = "label_Login">Login</string>
->>>>>>> 02b150e9ff6a6c61018af339b1630e68c9e315c6
 </resources>
