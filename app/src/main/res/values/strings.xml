@@ -1,5 +1,5 @@
 <resources>
-    <string name = "app_name">Android Pattern</string>
+    <string name="app_name">Go Shopping</string>
 
     <string name = "back_to_checkout">Back to Checkout</string>
     <string name = "label_email">Email</string>
