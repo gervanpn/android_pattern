@@ -1,4 +1,10 @@
 <resources>
     <string name = "app_name">Android Pattern</string>
-    <string name = "label_Login">Login</string>
+
+    <string name = "label_Login">Back to Checkout</string>
+    <string name = "label_email">Email</string>
+    <string name = "label_password">Password</string>
+
+    <string name = "password_hint">Password</string>
+    <string name = "email_hint">Email</string>
 </resources>
