@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/item-name"
+                android:id="@+id/et-name"
                 android:layout_width="200px"
                 android:layout_height="wrap_content"
                 android:hint="Item"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/item-cost"
+                android:id="@+id/et-cost"
                 android:layout_width="200px"
                 android:layout_height="wrap_content"
                 android:hint="Cost"
