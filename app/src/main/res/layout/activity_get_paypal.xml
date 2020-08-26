@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+                                                   xmlns:app = "http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools = "http://schemas.android.com/tools"
+                                                   android:layout_width = "match_parent"
+                                                   android:layout_height = "match_parent"
+                                                   tools:context = ".GetPaypal">
+
+    <EditText
+        android:id = "@+id/editTextEmailAddress"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "200dp"
+        android:layout_marginEnd = "96dp"
+        android:ems = "10"
+        android:inputType = "textEmailAddress"
+        android:textSize = "18sp"
+        app:layout_constraintEnd_toEndOf = "parent"
+        app:layout_constraintTop_toTopOf = "parent"
+        android:autofillHints = "" />
+
+    <TextView
+        android:id = "@+id/textEmailLabel"
+        android:layout_width = "122dp"
+        android:layout_height = "0dp"
+        android:layout_marginStart = "60dp"
+        android:layout_marginTop = "33dp"
+        android:text = "Email"
+        android:textSize = "18sp"
+        app:layout_constraintStart_toStartOf = "@+id/imgLogo"
+        app:layout_constraintTop_toBottomOf = "@+id/imgLogo" />
+
+    <TextView
+        android:id = "@+id/textPasswordLabel"
+        android:layout_width = "114dp"
+        android:layout_height = "0dp"
+        android:layout_marginStart = "99dp"
+        android:layout_marginEnd = "102dp"
+        android:layout_marginBottom = "440dp"
+        android:text = "Password"
+        android:textSize = "18sp"
+        app:layout_constraintBottom_toBottomOf = "parent"
+        app:layout_constraintEnd_toEndOf = "@+id/editTextPassword"
+        app:layout_constraintHorizontal_bias = "0.0"
+        app:layout_constraintStart_toStartOf = "parent" />
+
+    <EditText
+        android:id = "@+id/editTextPassword"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "8dp"
+        android:layout_marginEnd = "96dp"
+        android:layout_marginBottom = "359dp"
+        android:ems = "10"
+        android:inputType = "textPassword"
+        android:textSize = "18sp"
+        app:layout_constraintBottom_toBottomOf = "parent"
+        app:layout_constraintEnd_toEndOf = "parent"
+        app:layout_constraintTop_toBottomOf = "@+id/editTextEmailAddress"
+        android:autofillHints = "" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="333dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="214dp"
+        android:foreground="@drawable/paypal_logo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/paypal_logo" />
+
+    <Button
+        android:id = "@+id/buttonLogin"
+        style = "@style/Widget.AppCompat.Button.Colored"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginBottom = "326dp"
+        android:background = "#FFEB3B"
+        android:text = "@string/label_Login"
+        android:textColor = "@color/colorPrimary"
+        android:textColorLink = "@color/colorAccent"
+        android:textSize = "18sp"
+        app:layout_constraintBottom_toBottomOf = "parent"
+        app:layout_constraintStart_toStartOf = "@+id/textPasswordLabel"
+        app:layout_constraintTop_toBottomOf = "@+id/imgLogo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

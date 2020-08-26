@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Pattern</string>
+    <string name="welcome_text">Welcome! Don\'t spend your money on other stupid apps when you can spend your money here in this superior app, please: SHOW ME THE MONEY</string>
+    <string name="login_btn">Log In</string>
+    <string name="payment_text">Total cost to pay</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="paypal">Paypal</string>
+    <string name = "label_Login">Login</string>
+</resources>
