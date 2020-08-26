@@ -23,11 +23,11 @@
 
     <Button
         android:id="@+id/credit_card"
-        android:layout_width="182dp"
+        android:layout_width="170dp"
         android:layout_height="44dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="285dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="304dp"
         android:text="@string/credit_card"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,9 +37,9 @@
 
     <Button
         android:id="@+id/paypal"
-        android:layout_width="182dp"
+        android:layout_width="170dp"
         android:layout_height="44dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="285dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="304dp"
