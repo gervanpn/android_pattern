@@ -25,7 +25,7 @@
         android:layout_height = "0dp"
         android:layout_marginStart = "60dp"
         android:layout_marginTop = "33dp"
-        android:text = "Email"
+        android:text = "@string/email"
         android:textSize = "18sp"
         app:layout_constraintStart_toStartOf = "@+id/imgLogo"
         app:layout_constraintTop_toBottomOf = "@+id/imgLogo" />
@@ -37,7 +37,7 @@
         android:layout_marginStart = "99dp"
         android:layout_marginEnd = "102dp"
         android:layout_marginBottom = "440dp"
-        android:text = "Password"
+        android:text = "@string/password"
         android:textSize = "18sp"
         app:layout_constraintBottom_toBottomOf = "parent"
         app:layout_constraintEnd_toEndOf = "@+id/editTextPassword"
@@ -70,24 +70,23 @@
         android:foreground="@drawable/paypal_logo"
         app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/paypal_logo" />
 
     <Button
-        android:id = "@+id/buttonLogin"
-        style = "@style/Widget.AppCompat.Button.Colored"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_marginBottom = "326dp"
-        android:background = "#FFEB3B"
-        android:text = "@string/label_Login"
-        android:textColor = "@color/colorPrimary"
-        android:textColorLink = "@color/colorAccent"
-        android:textSize = "18sp"
-        app:layout_constraintBottom_toBottomOf = "parent"
-        app:layout_constraintStart_toStartOf = "@+id/textPasswordLabel"
-        app:layout_constraintTop_toBottomOf = "@+id/imgLogo" />
+        android:id="@+id/buttonLogin"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="326dp"
+        android:background="#FFEB3B"
+        android:text="@string/back_to_checkout"
+        android:textColor="@color/colorPrimary"
+        android:textColorLink="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textPasswordLabel"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
