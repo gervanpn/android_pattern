@@ -19,6 +19,8 @@ public class GetPaypal extends AppCompatActivity {
             @Override
             public void onClick(android.view.View v) {
                 android.widget.Toast.makeText( com.androidpattern.GetPaypal.this , "Signing into PayPal" , android.widget.Toast.LENGTH_LONG ).show();
+                android.content.Intent intent = new android.content.Intent( GetPaypal.this, PaymentCart.class);
+                startActivity(intent);
                 //android.content.Intent intent = new android.content.Intent(LogoActivity.this, LoginActivity.class);
                 //startActivity(intent);
                 
