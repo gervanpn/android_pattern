@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Android Pattern</string>
+    <string name="payment_text">Total cost to pay</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="paypal">Paypal</string>
 </resources>
