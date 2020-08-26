@@ -77,7 +77,7 @@
         android:layout_height = "48dp"
         android:layout_marginBottom = "188dp"
         android:background = "@drawable/yellow_rounded_corners"
-        android:text = "@string/label_Login"
+        android:text = "@string/back_to_checkout"
         android:textColor = "@color/colorPrimary"
         android:textColorLink = "@color/colorAccent"
         android:textSize = "18sp"
