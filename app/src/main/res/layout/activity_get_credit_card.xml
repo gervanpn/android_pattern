@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".GetCreditCard">
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="297dp"
-        android:layout_height="151dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="214dp"
-        android:foreground="@drawable/visa_mastercard_logo"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198" />
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imgLogo"-->
+    <!--        android:layout_width="333dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginStart="40dp"-->
+    <!--        android:layout_marginTop="1dp"-->
+    <!--        android:layout_marginEnd="40dp"-->
+    <!--        android:layout_marginBottom="214dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        tools:srcCompat="@drawable/paypal_logo" />-->
 
     <EditText
         android:id="@+id/editTextName"
@@ -100,15 +100,14 @@
 
     <TextView
         android:id="@+id/textdateOfExpiry"
-        android:layout_width="179dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="60dp"
-        android:text="Expiry Date (mm/yy)"
+        android:layout_width="119dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="90dp"
+        android:text="dateOfExpiry"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextdateOfExpiry"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
