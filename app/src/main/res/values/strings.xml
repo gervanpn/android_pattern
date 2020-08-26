@@ -14,4 +14,5 @@
     <string name="payment_text">Total cost to pay</string>
     <string name="credit_card">Credit Card</string>
     <string name="paypal">Paypal</string>
+    <string name = "login_btn">Go Shopping</string>
 </resources>
