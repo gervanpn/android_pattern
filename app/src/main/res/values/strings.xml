@@ -6,5 +6,11 @@
     <string name="payment_text">Total cost to pay</string>
     <string name="credit_card">Credit Card</string>
     <string name="paypal">Paypal</string>
-    <string name = "label_Login">Login</string>
+    <string name="back_to_checkout">Back to Checkout</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="expiry_date">Expiry Date (mm/yy)</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvv">cvv</string>
 </resources>
