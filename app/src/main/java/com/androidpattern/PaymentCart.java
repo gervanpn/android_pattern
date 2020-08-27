@@ -54,16 +54,16 @@ public class PaymentCart extends AppCompatActivity {
 
     private void total() {
             cost= getIntent().getDoubleExtra("Total",0);
-            total_cost.setText(cost+" price");
+            total_cost.setText( cost + "");
     }
 
     private void paypalText() {
         if(getIntent().getExtras().getString("value")!=null) {
             st= getIntent().getExtras().getString("value");
-            paymentsucess.setText(st+" ******** paid bill with Paypal");
+            paymentsucess.setText(st + " paid bill with Paypal");
         }
         else{
-            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "No Data Entered" , android.widget.Toast.LENGTH_LONG ).show();
         }
     }
 
@@ -74,7 +74,7 @@ public class PaymentCart extends AppCompatActivity {
             paymentsucess.setText(st + st2 + " paid bill with Credit Card");
         }
         else{
-            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "No Data Entered" , android.widget.Toast.LENGTH_LONG ).show();
         }
     }
 }
