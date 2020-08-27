@@ -52,7 +52,7 @@ public class PaymentCart extends AppCompatActivity {
     }
 
     private void total() {
-            cost= getIntent().getIntExtra("Total",0);
+            cost= getIntent().getDoubleExtra("Total",0);
             paymentsucess.setText(cost+" price");
     }
 
