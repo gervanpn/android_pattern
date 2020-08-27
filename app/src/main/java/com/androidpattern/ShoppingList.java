@@ -63,7 +63,7 @@ public class ShoppingList extends AppCompatActivity {
                 Item item = new Item(name, price, qnty);
                 cart.addItem(item); //adding new item to cart list
                 Toast.makeText(getApplicationContext(), "Item added: " + item.getName(), Toast.LENGTH_SHORT).show();
-                if (Cart.getQuantity() != 0) emptyCartTV.setVisibility(View.INVISIBLE);
+
                 updateCartView();
 
                 resetForm();  //clearing the form after adding the item successfully
@@ -100,7 +100,8 @@ public class ShoppingList extends AppCompatActivity {
     }
 
     private void updateCartView() {
-
+        //remove empty cart message after adding the first item to the cart;
+        if (Cart.getQuantity() != 0) emptyCartTV.setVisibility(View.INVISIBLE);
     }
 
     private void resetForm() {
