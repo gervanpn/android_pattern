@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.androidpattern.Models.Cart;
+
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal;
     TextView paymentsucess,  total_cost;
     String st, st2;
-    double cost;
+    double cost = Cart.getTotalCost();
+    int quantity = Cart.getQuantity();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +26,7 @@ public class PaymentCart extends AppCompatActivity {
         paypal = (Button) findViewById(R.id.paypal);
         paymentsucess= findViewById(R.id.paymentSuccess);
         total_cost =findViewById(R.id.total_cost);
-
+        total_cost.setText( cost + "");
         creditCard.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -44,8 +48,8 @@ public class PaymentCart extends AppCompatActivity {
         Intent intent = getIntent();
         String checkFlag= intent.getStringExtra("flag");
         if(checkFlag.equals("A")){
-            total();
-        }if(checkFlag.equals("CC")) {
+            total(); }
+        if(checkFlag.equals("CC")) {
             creditText();
         }if(checkFlag.equals("PP")){
             paypalText();
@@ -53,8 +57,8 @@ public class PaymentCart extends AppCompatActivity {
     }
 
     private void total() {
-            cost= getIntent().getDoubleExtra("Total",0);
-            total_cost.setText( cost + "");
+//            cost= getIntent().getDoubleExtra("Total",0);
+//            total_cost.setText( cost + "");
     }
 
     private void paypalText() {
