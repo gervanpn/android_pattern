@@ -29,9 +29,6 @@ public class GetPaypal extends AppCompatActivity {
                 intent.putExtra("value",st);
                 startActivity(intent);
                 finish();
-                //android.content.Intent intent = new android.content.Intent(LogoActivity.this, LoginActivity.class);
-                //startActivity(intent);
-                
             }
         });
     }
