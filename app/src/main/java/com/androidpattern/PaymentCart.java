@@ -10,7 +10,7 @@ import com.androidpattern.Models.Cart;
 
 public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
     Button creditCard, paypal;
-    TextView paymentsucess,  total_cost;
+    TextView paymentsucess,  total_cost, total_quantity;
     String st, st2;
     double cost = Cart.getTotalCost();
     int quantity = Cart.getQuantity();
@@ -23,8 +23,10 @@ public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
         paymentsucess= findViewById(R.id.paymentSuccess);
-        total_cost =findViewById(R.id.total_cost);
-        total_cost.setText( cost + "");
+        total_cost = findViewById(R.id.total_cost);
+        total_quantity = findViewById( R.id.total_cost2);
+        total_cost.setText( Cart.getTotalCost() + "");
+        total_quantity.setText( Cart.getQuantity() + "");
         creditCard.setOnClickListener(new View.OnClickListener() {
 
             @Override
