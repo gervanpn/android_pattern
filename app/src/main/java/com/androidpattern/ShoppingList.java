@@ -21,6 +21,7 @@ public class ShoppingList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PaymentCart.class);
+                intent.putExtra("flag", "A");
                 startActivity(intent);
             }
         });
