@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.androidpattern.Models.Cart;
 import com.androidpattern.Models.Item;
 import java.util.ArrayList;
 
@@ -92,10 +94,11 @@ public class ShoppingList extends AppCompatActivity {
         double total = 0;
         for (Item item : cart) {
             total += item.getCost();
+            Cart.setTotal(total);
         }
         //sending the user to the payment page with the total cost
         Intent intent = new Intent(getApplicationContext(), PaymentCart.class);
-        intent.putExtra("Total", total);
+//        intent.putExtra("Total", total);
         intent.putExtra("flag", "A");
         startActivity(intent);
     }
