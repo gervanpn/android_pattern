@@ -5,13 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.androidpattern.Models.Item;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ShoppingList extends AppCompatActivity {
 
@@ -25,36 +26,42 @@ public class ShoppingList extends AppCompatActivity {
         setContentView(R.layout.activity_shopping_list);
 
         addBtn = findViewById(R.id.btn_add);
+        checkoutBtn =  findViewById(R.id.btn_checkout);
         nameET = findViewById(R.id.et_name);
         priceET = findViewById(R.id.et_price);
         qntyET = findViewById(R.id.et_qnty);
 
+        //declaring an array of items added to shopping cart
+        final ArrayList<Item> cart = new ArrayList<>();
 
-
+        //programing add button
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //declaring variables to store name, price and quantity fields values
-                String name, price, qnty;
+
+                String name, price, qnty; //declaring variables to store name, price and quantity fields values
                 //getting name, price and quantity values of the item to be added
                 name = nameET.getText().toString();
                 price = priceET.getText().toString();
                 qnty = qntyET.getText().toString();
-                //validating the add item form(all fields should be filled out)
-                if(name.trim().length() == 0 || price.length()  == 0 || qnty.length() == 0 ) {
+
+                if(name.trim().length() == 0 || price.length()  == 0 || qnty.length() == 0 ) { //validating the add item form(all fields should be filled out)
                     Toast.makeText(getApplicationContext(), "Please fill out all the fields", Toast.LENGTH_SHORT).show();
                     return;
+                } else if (Integer.valueOf(qnty) == 0) { //check if the quantity is not 0
+                    Toast.makeText(getApplicationContext(), "Please enter a valid number of items", Toast.LENGTH_SHORT).show();
+                    return;
                 } else {
-                    //creating an item based on the entry values
-                    Item item = new Item(name, price, qnty);
-                    Toast.makeText(getApplicationContext(), "Form Submitted", Toast.LENGTH_SHORT).show();
-                    //clearing the form after adding the item successfully
-                    resetForm();
+                    Item item = new Item(name, price, qnty); //creating an item based  the entry values
+                    cart.add(item); //adding new item to cart list
+                    Toast.makeText(getApplicationContext(), "Item added: " + cart.get(cart.size()-1).getName(), Toast.LENGTH_SHORT).show();
+
+                    resetForm();  //clearing the form after adding the item successfully
                 }
             }
         });
 
-        checkoutBtn =  findViewById(R.id.btn_checkout);
+        //programing checkout button
         checkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
