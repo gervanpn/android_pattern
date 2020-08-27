@@ -60,7 +60,7 @@ public class PaymentCart extends AppCompatActivity {
     private void paypalText() {
         if(getIntent().getExtras().getString("value")!=null) {
             st= getIntent().getExtras().getString("value");
-            paymentsucess.setText(st+" ******** paid bill with Paypal");
+            paymentsucess.setText(st + "paid bill with Paypal");
         }
         else{
             android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
