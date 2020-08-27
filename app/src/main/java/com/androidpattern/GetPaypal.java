@@ -9,17 +9,17 @@ public class GetPaypal extends AppCompatActivity {
     Button checkoutButton;
     String st;
     android.widget.TextView emailAddress;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_paypal);
-    
+
         checkoutButton = ( Button ) findViewById( com.androidpattern.R.id.checkOutButton );
         emailAddress = findViewById( com.androidpattern.R.id.editTextEmailAddress );
-    
+
         checkoutButton.setOnClickListener(new android.view.View.OnClickListener() {
-    
+
             @Override
             public void onClick(android.view.View v) {
                 android.widget.Toast.makeText( com.androidpattern.GetPaypal.this , "Signing into PayPal" , android.widget.Toast.LENGTH_LONG ).show();
