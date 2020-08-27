@@ -8,10 +8,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add items"
-        android:textStyle="bold"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:text="@string/add_items"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:id="@+id/rl_fields"
@@ -33,7 +33,7 @@
                 android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Item"
+                android:hint="@string/item"
                 android:singleLine="true"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -57,7 +57,7 @@
                     android:id="@+id/et_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Price"
+                    android:hint="@string/price"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textSize="14sp" />
@@ -74,7 +74,7 @@
                     android:id="@+id/et_qnty"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Qnty"
+                    android:hint="@string/quantity_short"
                     android:inputType="number"
                     android:singleLine="true"
                     android:textSize="14sp" />
