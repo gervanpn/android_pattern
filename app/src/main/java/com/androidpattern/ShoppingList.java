@@ -96,6 +96,11 @@ public class ShoppingList extends AppCompatActivity {
             total += item.getCost();
             Cart.setTotal(total);
         }
+
+        //setting the number of items in the cart
+        int quantity = cart.size();
+        Cart.setQuantity(quantity);
+
         //sending the user to the payment page with the total cost
         Intent intent = new Intent(getApplicationContext(), PaymentCart.class);
 //        intent.putExtra("Total", total);

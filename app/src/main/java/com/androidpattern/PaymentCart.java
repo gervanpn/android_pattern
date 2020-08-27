@@ -15,6 +15,7 @@ public class PaymentCart extends AppCompatActivity {
     TextView paymentsucess,  total_cost;
     String st, st2;
     double cost = Cart.getTotal();
+    int quantity = Cart.getQuantity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
