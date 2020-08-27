@@ -14,7 +14,7 @@ public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal;
     TextView paymentsucess,  total_cost;
     String st, st2;
-    double cost = Cart.getTotal();
+    double cost = Cart.getTotalCost();
     int quantity = Cart.getQuantity();
 
     @Override
