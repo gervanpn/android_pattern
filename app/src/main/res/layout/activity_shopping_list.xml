@@ -37,7 +37,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn-checkout"
+        android:id="@+id/btn_checkout"
         android:layout_gravity="right"
         android:layout_marginRight="32px"
         android:layout_width="wrap_content"
