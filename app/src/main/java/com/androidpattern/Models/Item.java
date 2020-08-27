@@ -3,11 +3,13 @@ package com.androidpattern.Models;
 public class Item {
 
     private String name, price, quantity;
+    private double cost;
 
-    public Item(String name, String price, String quantity) {
+    public Item(String name, String price, String quantity, double cost) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.cost = cost;
     }
 
     public String getName() {
