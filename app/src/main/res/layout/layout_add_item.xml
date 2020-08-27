@@ -87,7 +87,7 @@
         android:layout_alignBottom="@id/rl_fields"
         android:layout_alignParentRight="true"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/accent_rounded_corners"
         android:clickable="false"
         android:padding="6dp"

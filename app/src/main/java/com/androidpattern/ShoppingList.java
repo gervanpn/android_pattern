@@ -76,15 +76,25 @@ public class ShoppingList extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Your shopping cart is empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Intent intent = new Intent(getApplicationContext(), PaymentCart.class);
-                startActivity(intent);
+                checkout();
             }
         });
 
     }
+
+    private void checkout() {
+        //calculating the total cost to be paid
+        double total = 0;
+        for (Item item: cart ) {
+            total += item.getCost();
+        }
+        //sending the user to the payment page with the total cost
+        Intent intent = new Intent(getApplicationContext(), PaymentCart.class);
+        intent.putExtra("Total", total);
+        startActivity(intent);
+    }
+
     private void updateCartView() {
-
-
 
     }
 
