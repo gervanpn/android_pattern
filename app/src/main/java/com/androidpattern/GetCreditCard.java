@@ -12,8 +12,8 @@ import com.androidpattern.Models.CreditCardStrategy;
 
 public class GetCreditCard extends AppCompatActivity {
     Button buttonSubmit;
-    EditText name;
-    String st;
+    EditText name, card_no;
+    String st, st1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +22,16 @@ public class GetCreditCard extends AppCompatActivity {
 
         buttonSubmit = (Button) findViewById( com.androidpattern.R.id.buttonSubmit );
         name = findViewById(R.id.editTextName);
+        card_no = findViewById(R.id.editTextCardNumber);
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GetCreditCard.this, PaymentCart.class);
                 st=name.getText().toString();
-                intent.putExtra("flag", "B");
+                st1 = card_no.getText().toString();
+                intent.putExtra("flag", "CC");
                 intent.putExtra("value",st);
+                intent.putExtra("value2",st1);
                 startActivity(intent);
                 finish();
             }
