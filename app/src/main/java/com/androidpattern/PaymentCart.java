@@ -11,7 +11,8 @@ import android.widget.TextView;
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal;
     TextView paymentsucess;
-    String st;
+    String st, st2;
+    double cost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,19 +39,38 @@ public class PaymentCart extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Intent intent = getIntent();
         String checkFlag= intent.getStringExtra("flag");
         if(checkFlag.equals("A")){
-            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
-        }if(checkFlag.equals("B")) {
-            forText();
+            total();
+        }if(checkFlag.equals("CC")) {
+            creditText();
+        }if(checkFlag.equals("PP")){
+            paypalText();
         }
     }
 
-    private void forText() {
+    private void total() {
+            cost= getIntent().getIntExtra("Total",0);
+            paymentsucess.setText(cost+" price");
+    }
+
+    private void paypalText() {
         if(getIntent().getExtras().getString("value")!=null) {
             st= getIntent().getExtras().getString("value");
-            paymentsucess.setText(st+" paid bill with credit card");
+            paymentsucess.setText(st+" ******** paid bill with Paypal");
+        }
+        else{
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+        }
+    }
+
+    private void creditText() {
+        if(getIntent().getExtras().getString("value")!=null) {
+            st= getIntent().getExtras().getString("value");
+            st2= getIntent().getExtras().getString("value2");
+            paymentsucess.setText(st + st2 + " paid bill with Credit Card");
         }
         else{
             android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
