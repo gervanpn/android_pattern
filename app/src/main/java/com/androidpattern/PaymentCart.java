@@ -54,7 +54,7 @@ public class PaymentCart extends AppCompatActivity {
 
     private void total() {
             cost= getIntent().getDoubleExtra("Total",0);
-            total_cost.setText(cost+" price");
+            total_cost.setText( cost + "");
     }
 
     private void paypalText() {
