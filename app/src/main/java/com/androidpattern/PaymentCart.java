@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal;
-    TextView paymentsucess;
+    TextView paymentsucess,  total_cost;
     String st, st2;
     double cost;
     @Override
@@ -21,6 +21,7 @@ public class PaymentCart extends AppCompatActivity {
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
         paymentsucess= findViewById(R.id.paymentSuccess);
+        total_cost =findViewById(R.id.total_cost);
 
         creditCard.setOnClickListener(new View.OnClickListener() {
 
@@ -53,7 +54,7 @@ public class PaymentCart extends AppCompatActivity {
 
     private void total() {
             cost= getIntent().getDoubleExtra("Total",0);
-            paymentsucess.setText(cost+" price");
+            total_cost.setText(cost+" price");
     }
 
     private void paypalText() {
