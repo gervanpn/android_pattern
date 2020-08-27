@@ -10,15 +10,16 @@ import android.widget.TextView;
 
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal;
-    TextView totalCost;
+    TextView paymentsucess;
+    String st;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_cart);
-        totalCost = findViewById(R.id.Total_textView);
 
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
+        paymentsucess= findViewById(R.id.paymentSuccess);
 
         creditCard.setOnClickListener(new View.OnClickListener() {
 
@@ -37,5 +38,22 @@ public class PaymentCart extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Intent intent = getIntent();
+        String checkFlag= intent.getStringExtra("flag");
+        if(checkFlag.equals("A")){
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+        }if(checkFlag.equals("B")) {
+            forText();
+        }
+    }
+
+    private void forText() {
+        if(getIntent().getExtras().getString("value")!=null) {
+            st= getIntent().getExtras().getString("value");
+            paymentsucess.setText(st+" paid bill with credit card");
+        }
+        else{
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+        }
     }
 }
