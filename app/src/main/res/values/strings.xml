@@ -16,11 +16,7 @@
     <string name="expiry_date">Expiry Date (mm/yy)</string>
     <string name="card_number">Card Number</string>
     <string name="cvv">cvv</string>
-<<<<<<< HEAD
-</resources>
-=======
     <string name="payment_method">Payment Method</string>
     <string name="total_cost">Total cost</string>
     <string name="total_items">Total items</string>
 </resources>
->>>>>>> develop
