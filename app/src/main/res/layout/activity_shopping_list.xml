@@ -2,47 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="32dp">
 
-    <LinearLayout
+    <include layout="@layout/layout_add_item"/>
+
+    <include layout="@layout/layout_cart_list"/>
+
+
+    <ImageButton
+        android:id="@+id/btn_checkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="24px"
-        android:layout_marginTop="128px">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="200px"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/et-name"
-                android:layout_width="200px"
-                android:layout_height="wrap_content"
-                android:hint="Item"
-                android:singleLine="true" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="200px"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/et-cost"
-                android:layout_width="200px"
-                android:layout_height="wrap_content"
-                android:hint="Cost"
-                android:singleLine="true" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn-checkout"
-        android:layout_gravity="right"
-        android:layout_marginRight="32px"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Checkout">
-
-    </Button>
+        android:layout_alignBottom="@id/rl_fields"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/accent_rounded_corners"
+        android:clickable="false"
+        android:padding="6dp"
+        android:src="@drawable/ic_baseline_checkout" />
 </LinearLayout>

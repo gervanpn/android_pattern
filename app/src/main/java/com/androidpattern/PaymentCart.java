@@ -6,9 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal;
+    TextView paymentsucess;
+    String st, st2;
+    double cost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +20,7 @@ public class PaymentCart extends AppCompatActivity {
 
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
+        paymentsucess= findViewById(R.id.paymentSuccess);
 
         creditCard.setOnClickListener(new View.OnClickListener() {
 
@@ -34,5 +39,41 @@ public class PaymentCart extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Intent intent = getIntent();
+        String checkFlag= intent.getStringExtra("flag");
+        if(checkFlag.equals("A")){
+            total();
+        }if(checkFlag.equals("CC")) {
+            creditText();
+        }if(checkFlag.equals("PP")){
+            paypalText();
+        }
+    }
+
+    private void total() {
+            cost= getIntent().getDoubleExtra("Total",0);
+            paymentsucess.setText(cost+" price");
+    }
+
+    private void paypalText() {
+        if(getIntent().getExtras().getString("value")!=null) {
+            st= getIntent().getExtras().getString("value");
+            paymentsucess.setText(st+" ******** paid bill with Paypal");
+        }
+        else{
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+        }
+    }
+
+    private void creditText() {
+        if(getIntent().getExtras().getString("value")!=null) {
+            st= getIntent().getExtras().getString("value");
+            st2= getIntent().getExtras().getString("value2");
+            paymentsucess.setText(st + st2 + " paid bill with Credit Card");
+        }
+        else{
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+        }
     }
 }
