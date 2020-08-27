@@ -1,7 +1,6 @@
 package com.androidpattern;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,18 +8,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.androidpattern.Models.Cart;
 import com.androidpattern.Models.Item;
-
-import java.util.ArrayList;
 
 public class ShoppingList extends AppCompatActivity {
 
     ImageButton addBtn, checkoutBtn, removeItemBtn;
     TextView emptyCartTV;
     EditText nameET, priceET, qntyET;
-    Cart cart = new Cart();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +56,7 @@ public class ShoppingList extends AppCompatActivity {
 
                 //creating an item based  the fields values
                 Item item = new Item(name, price, qnty);
-                cart.addItem(item); //adding new item to cart list
+                Cart.addItem(item); //adding new item to cart list
                 Toast.makeText(getApplicationContext(), "Item added: " + item.getName(), Toast.LENGTH_SHORT).show();
 
                 updateCartView();

@@ -7,10 +7,10 @@ public class Cart {
     static private ArrayList<Item> items = new ArrayList<>();
     static private double totalCost = 0;
 
-    public Cart() {
+    private Cart() {
     }
 
-    public void addItem(Item item) {
+    public static void addItem(Item item) {
         items.add(item);
         setTotalCost();
     }
@@ -23,7 +23,7 @@ public class Cart {
         return items.size();
     }
 
-    private void setTotalCost() {
+    private static void setTotalCost() {
         totalCost = 0;
         for (Item item : items) {
             totalCost += item.getCost();
