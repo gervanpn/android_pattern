@@ -23,10 +23,11 @@ public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
         paymentsucess= findViewById(R.id.paymentSuccess);
-        total_cost = findViewById(R.id.total_cost);
-        total_quantity = findViewById( R.id.total_cost2);
-        total_cost.setText( Cart.getTotalCost() + "");
-        total_quantity.setText( Cart.getQuantity() + "");
+        total_cost =findViewById(R.id.total_cost);
+        total_cost.setText( cost + "");
+        total_quantity = findViewById(R.id.total_items);
+        total_quantity.setText(quantity+"");
+
         creditCard.setOnClickListener(new View.OnClickListener() {
 
             @Override

@@ -7,7 +7,9 @@
     <string name = "password_hint">Password</string>
     <string name = "email_hint">Email</string>
     <string name = "todo">TO DO</string>
-    <string name = "welcome_text">Welcome! Don\'t spend your money on other stupid apps when you can spend your money here in this superior app, please: SHOW ME THE MONEY</string>
+    <string name="welcome_text">Hey boss!
+        Use this App to go into the world of shopping at the lowest price, highest quality and next day delivery and service.
+        ENTER HERE TO BUY ALL THE HAPPINESS YOU WANT ....</string>
     <string name = "payment_text">Total cost to pay</string>
     <string name = "credit_card">Credit Card</string>
     <string name = "paypal">Paypal</string>
