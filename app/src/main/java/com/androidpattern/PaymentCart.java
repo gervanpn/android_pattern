@@ -1,12 +1,12 @@
 package com.androidpattern;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal;
@@ -41,16 +41,17 @@ public class PaymentCart extends AppCompatActivity {
         Intent intent = getIntent();
         String checkFlag= intent.getStringExtra("flag");
         if(checkFlag.equals("A")){
-            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+            //android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
+            forText("PayPal");
         }if(checkFlag.equals("B")) {
-            forText();
+            forText("Credit Card");
         }
     }
 
-    private void forText() {
+    private void forText(String method) {
         if(getIntent().getExtras().getString("value")!=null) {
             st= getIntent().getExtras().getString("value");
-            paymentsucess.setText(st+" paid bill with credit card");
+            paymentsucess.setText(String.format("%s paid bill with %s", st, method));
         }
         else{
             android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "there is no success msg" , android.widget.Toast.LENGTH_LONG ).show();
