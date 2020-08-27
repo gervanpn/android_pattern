@@ -30,7 +30,8 @@
                 android:text="No items selected yet!"
                 android:textSize="14sp" />
 
-            <Button
+            <ImageButton
+                android:id="@+id/btn_remove_item"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
