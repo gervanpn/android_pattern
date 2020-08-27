@@ -2,14 +2,12 @@ package com.androidpattern.Models;
 
 public class Item {
 
-    private String name;
-    private double price;
-    private int qnty;
+    private String name, price, quantity;
 
-    public Item(String name, double price, int qnty) {
+    public Item(String name, String price, String quantity) {
         this.name = name;
         this.price = price;
-        this.qnty = qnty;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -20,19 +18,19 @@ public class Item {
         this.name = name;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getQnty() {
-        return qnty;
+    public String getQuantity() {
+        return quantity;
     }
 
-    public void setQnty(int qnty) {
-        this.qnty = qnty;
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 }
