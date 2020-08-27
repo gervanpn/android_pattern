@@ -8,8 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select items"
-        android:textSize="18sp"
+        android:text="Add items"
         android:textStyle="bold" />
 
     <RelativeLayout
@@ -86,12 +85,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@color/colorAccent"
+            android:background="@drawable/accent_rounded_corners"
             android:padding="6dp"
             android:layout_marginBottom="4dp"
             android:layout_alignParentRight="true"
             android:layout_alignBottom="@id/rl_fields"
-            android:src="@drawable/ic_baseline_add_shopping_cart"/>
+            android:src="@drawable/ic_baseline_add_shopping_cart"
+            android:clickable="false"/>
     </RelativeLayout>
 
     <ScrollView
@@ -126,10 +126,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorAccent"
+        android:background="@drawable/accent_rounded_corners"
         android:padding="6dp"
         android:layout_marginBottom="4dp"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/rl_fields"
-        android:src="@drawable/ic_baseline_checkout"/>
+        android:src="@drawable/ic_baseline_checkout"
+        android:clickable="false"/>
 </LinearLayout>
