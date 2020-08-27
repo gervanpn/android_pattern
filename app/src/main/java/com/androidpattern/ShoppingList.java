@@ -68,6 +68,7 @@ public class ShoppingList extends AppCompatActivity {
         checkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (cart.size() == 0) { // check if cart has any item to checkout; if not it returns;
                     Toast.makeText(getApplicationContext(), "Your shopping cart is empty", Toast.LENGTH_SHORT).show();
                     return;
@@ -95,6 +96,7 @@ public class ShoppingList extends AppCompatActivity {
         //sending the user to the payment page with the total cost
         Intent intent = new Intent(getApplicationContext(), PaymentCart.class);
         intent.putExtra("Total", total);
+        intent.putExtra("flag", "A");
         startActivity(intent);
     }
 
