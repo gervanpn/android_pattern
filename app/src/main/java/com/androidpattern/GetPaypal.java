@@ -25,7 +25,7 @@ public class GetPaypal extends AppCompatActivity {
                 android.widget.Toast.makeText( com.androidpattern.GetPaypal.this , "Signing into PayPal" , android.widget.Toast.LENGTH_LONG ).show();
                 android.content.Intent intent = new android.content.Intent( GetPaypal.this, PaymentCart.class);
                 st = emailAddress.getText().toString();
-                intent.putExtra("flag", "A");
+                intent.putExtra("flag", "PP");
                 intent.putExtra("value",st);
                 startActivity(intent);
                 finish();

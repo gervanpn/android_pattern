@@ -12,10 +12,10 @@
     <string name = "credit_card">Credit Card</string>
     <string name = "paypal">Paypal</string>
     <string name = "login_btn">Go Shopping</string>
-    <string name="email">Email</string>
-    <string name="name">Name</string>
-    <string name="expiry_date">Expiry Date (mm/yy)</string>
-    <string name="card_number">Card Number</string>
-    <string name="cvv">cvv</string>
-    <string name="payment_method">Payment Method</string>
+    <string name = "email">Email</string>
+    <string name = "name">Name</string>
+    <string name = "expiry_date">Expiry Date (mm/yy)</string>
+    <string name = "card_number">Card Number</string>
+    <string name = "cvv">cvv</string>
+    <string name = "payment_method">Payment Method</string>
 </resources>
