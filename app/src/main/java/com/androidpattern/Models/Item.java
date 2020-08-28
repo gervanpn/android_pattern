@@ -13,7 +13,8 @@ public class Item {
     }
 
     public double getCost() {
-       return Double.parseDouble(this.price) * Double.parseDouble(this.quantity); //calculating the total cost of an item (price x qnty)
+       String temp = String.format("%.2f", Double.parseDouble(this.price));
+        return Double.parseDouble(temp) * Double.parseDouble(this.quantity); //calculating the total cost of an item (price x qnty)
     }
 
     public int getId() {

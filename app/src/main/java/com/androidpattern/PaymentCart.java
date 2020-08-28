@@ -27,7 +27,7 @@ public class PaymentCart extends AppCompatActivity {
         home = (Button) findViewById(R.id.gotostart);
         paymentsucess = findViewById(R.id.paymentSuccess);
         total_cost = findViewById(R.id.total_cost);
-        total_cost.setText( cost + "");
+        total_cost.setText( String.format("%.2f", cost));
         total_quantity = findViewById(R.id.total_items);
         total_quantity.setText(quantity+"");
 
