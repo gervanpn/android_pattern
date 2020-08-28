@@ -42,7 +42,7 @@ public class ShoppingList extends AppCompatActivity {
 
         //update cart list
         for (int i = 0; i < Cart.getQuantity(); i++) {
-            updateCartView(Cart.getItemName(i), i);
+            updateCartView(Cart.getItemName(i), Cart.getItemId(i));
         }
 
         //programing add button
@@ -69,7 +69,7 @@ public class ShoppingList extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Item added: " + item.getName(), Toast.LENGTH_SHORT).show();
 
                 updateCartView(item.getName(),  item.getId());
-
+                Toast.makeText(getApplicationContext(), "Item id: " + item.getId(), Toast.LENGTH_SHORT).show();
                 resetForm();  //clearing the form after adding the item successfully
             }
 
@@ -127,6 +127,7 @@ public class ShoppingList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("remove", "Removed");
+                Toast.makeText(getApplicationContext(), "Item id: " + id, Toast.LENGTH_SHORT).show();
                 cartListLL.removeView((View) view.getParent());
                 //udpate items in Cart
                 Cart.removeItem(id);

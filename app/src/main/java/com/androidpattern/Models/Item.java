@@ -12,12 +12,12 @@ public class Item {
         this.id = name.hashCode();
     }
 
-    protected double getCost() {
+    public double getCost() {
        return Integer.parseInt(this.price) * Integer.parseInt(this.quantity); //calculating the total cost of an item (price x qnty)
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public String getName() {
