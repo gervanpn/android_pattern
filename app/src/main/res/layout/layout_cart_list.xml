@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Items"
+            android:text="@string/item"
             android:textStyle="bold" />
 
         <RelativeLayout
@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Cart is empty!"
+                android:text="@string/empty_cart"
                 android:textSize="14sp" />
 
             <ImageButton
@@ -35,7 +35,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:text="-" />
+                android:contentDescription="@string/spacer"
+                android:text="@string/spacer" />
         </RelativeLayout>
     </LinearLayout>
 </ScrollView>
