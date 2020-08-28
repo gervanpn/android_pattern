@@ -3,17 +3,21 @@ package com.androidpattern.Models;
 public class Item {
 
     private String name, price, quantity;
-    private double cost;
+    private int id;
 
-    public Item(String name, String price, String quantity, double cost) {
+    public Item(String name, String price, String quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.cost = cost;
+        this.id = name.hashCode();
     }
 
     public double getCost() {
-        return cost;
+       return Integer.parseInt(this.price) * Integer.parseInt(this.quantity); //calculating the total cost of an item (price x qnty)
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
