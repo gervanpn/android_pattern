@@ -44,4 +44,7 @@ public class Cart {
         return items.size();
     }
 
+    public static void clearCart(){
+        items.clear();
+    }
 }
