@@ -1,33 +1,43 @@
 package com.androidpattern.Models;
 
+import android.util.Log;
 import java.util.ArrayList;
 
 public class Cart {
 
     static private ArrayList<Item> items = new ArrayList<>();
-    static private double totalCost = 0;
 
-    public Cart() {
+    private Cart() {
     }
 
-    public void addItem(Item item) {
-        items.add(item);
-        setTotalCost();
+    public static void addItem(Item item) {
+        Cart.items.add(item);
+    }
+
+    public static int getItemId(int index){
+        return items.get(index).getId();
+    }
+
+    public static String getItemName(int ind) {
+        return items.get(ind).getName();
+    }
+
+    public static void removeItem(int id) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) items.remove(i);
+        }
     }
 
     public static double getTotalCost() {
+        double totalCost = 0;
+        for (Item item: items) {
+            totalCost += item.getCost();
+        };
         return totalCost;
     }
 
     public static int getQuantity() {
         return items.size();
-    }
-
-    private void setTotalCost() {
-        totalCost = 0;
-        for (Item item : items) {
-            totalCost += item.getCost();
-        }
     }
 
 }
