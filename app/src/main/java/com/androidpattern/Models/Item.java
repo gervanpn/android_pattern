@@ -13,7 +13,7 @@ public class Item {
     }
 
     public double getCost() {
-       return Integer.parseInt(this.price) * Integer.parseInt(this.quantity); //calculating the total cost of an item (price x qnty)
+       return Double.parseDouble(this.price) * Double.parseDouble(this.quantity); //calculating the total cost of an item (price x qnty)
     }
 
     public int getId() {
