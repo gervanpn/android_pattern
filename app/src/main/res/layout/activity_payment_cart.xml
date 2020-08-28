@@ -74,7 +74,7 @@
         app:layout_constraintVertical_bias="0.531" />
 
     <TextView
-        android:id="@+id/total_cost2"
+        android:id="@+id/total_items"
         android:layout_width="107dp"
         android:layout_height="38dp"
         android:layout_marginTop="38dp"
@@ -143,6 +143,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paypal" />
+        app:layout_constraintTop_toBottomOf="@+id/paypal"
+        app:layout_constraintVertical_bias="0.496" />
+
+    <Button
+        android:id="@+id/gotostart"
+        android:layout_width="170dp"
+        android:layout_height="44dp"
+        android:background="@drawable/accent_rounded_corners"
+        android:text="@string/home"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentSuccess"
+        app:layout_constraintVertical_bias="0.325" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
