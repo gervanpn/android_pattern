@@ -50,8 +50,11 @@
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/set_taxrate_t"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set_title" />
+        app:layout_constraintTop_toBottomOf="@+id/set_title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/set_taxrate_t"
@@ -98,6 +101,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
-        tools:layout_editor_absoluteX="232dp"
+        app:layout_constraintTop_toBottomOf="@+id/set_title"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="231dp"
         tools:text="@string/set_tax_province" />
 </androidx.constraintlayout.widget.ConstraintLayout>
