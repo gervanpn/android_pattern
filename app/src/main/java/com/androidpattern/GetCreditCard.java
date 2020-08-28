@@ -20,14 +20,14 @@ public class GetCreditCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_credit_card);
 
-        buttonSubmit = (Button) findViewById( com.androidpattern.R.id.buttonSubmit );
+        buttonSubmit = (Button) findViewById( R.id.buttonSubmit );
         name = findViewById(R.id.editTextName);
         card_no = findViewById(R.id.editTextCardNumber);
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GetCreditCard.this, PaymentCart.class);
-                st=name.getText().toString();
+                st = name.getText().toString();
                 st1 = card_no.getText().toString();
                 intent.putExtra("flag", "CC");
                 intent.putExtra("value",st);
