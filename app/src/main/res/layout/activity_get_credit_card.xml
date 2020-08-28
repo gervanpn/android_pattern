@@ -70,6 +70,7 @@
         android:autofillHints=""
         android:ems="10"
         android:textSize="18sp"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textcvv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -96,6 +97,7 @@
         android:autofillHints=""
         android:ems="10"
         android:textSize="18sp"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textdateOfExpiry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -123,6 +125,7 @@
         android:autofillHints=""
         android:ems="10"
         android:textSize="18sp"
+        android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
