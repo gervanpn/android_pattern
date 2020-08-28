@@ -31,9 +31,11 @@
     <string name="home">Home</string>
     <string name="items">Items</string>
     <string name="cart_is_empty">Cart is empty!</string>
+    <string name="settings">Settings</string>
     <string name="settings_title">Go Shopping Settings:</string>
     <string name="settings_save">S A V E</string>
     <string name="setting_taxes">Calculate Taxes</string>
     <string name="set_tax_title">Tax Rate</string>
     <string name="set_tax_province">Province</string>
+
 </resources>
