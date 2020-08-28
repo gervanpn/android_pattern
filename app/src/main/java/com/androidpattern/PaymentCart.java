@@ -25,8 +25,8 @@ public class PaymentCart extends AppCompatActivity {
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
         home = (Button) findViewById(R.id.gotostart);
-        paymentsucess= findViewById(R.id.paymentSuccess);
-        total_cost =findViewById(R.id.total_cost);
+        paymentsucess = findViewById(R.id.paymentSuccess);
+        total_cost = findViewById(R.id.total_cost);
         total_cost.setText( cost + "");
         total_quantity = findViewById(R.id.total_items);
         total_quantity.setText(quantity+"");
