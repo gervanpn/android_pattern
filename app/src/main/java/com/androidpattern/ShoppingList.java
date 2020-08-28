@@ -67,7 +67,6 @@ public class ShoppingList extends AppCompatActivity {
                 Item item = new Item(name, price, qnty);
                 Cart.addItem(item); //adding new item to cart list
                 Toast.makeText(getApplicationContext(), "Item added: " + item.getName(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), "fist Item : " + Cart.getItemName(Cart.getQuantity() -1), Toast.LENGTH_SHORT).show();
 
                 updateCartView(item.getName(),  Cart.getQuantity() -1);
 
@@ -96,7 +95,7 @@ public class ShoppingList extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void updateCartView(String name, final int id) {
+    private void updateCartView(final String name, final int id) {
         // update empty cart message
         emptyCartMsg();
 

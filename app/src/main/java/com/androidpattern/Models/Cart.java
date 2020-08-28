@@ -6,7 +6,6 @@ public class Cart {
 
     static private ArrayList<Item> items = new ArrayList<>();
 
-
     private Cart() {
     }
 
@@ -18,8 +17,8 @@ public class Cart {
         return items.get(ind).getName();
     }
 
-    public static void removeItem(int id) {
-        items.remove(id);
+    public static void removeItem(int index) {
+        items.remove(index);
     }
 
     public static double getTotalCost() {
