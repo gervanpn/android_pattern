@@ -103,6 +103,7 @@ public class ShoppingList extends AppCompatActivity {
         //creating a relative layout to to add show the newly-added item and a button to remove it in case
         LinearLayout cartListLLCh = new LinearLayout(this);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.setMargins(0, 0, 0, 20);
         cartListLLCh.setLayoutParams(params);
         cartListLLCh.setOrientation(LinearLayout.HORIZONTAL);
         cartListLL.addView(cartListLLCh);
