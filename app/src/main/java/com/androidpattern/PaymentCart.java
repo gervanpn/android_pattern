@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import com.androidpattern.Models.Cart;
 
-public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
-    Button creditCard, paypal;
+public class PaymentCart extends AppCompatActivity {
+    Button creditCard, paypal, home;
     TextView paymentsucess,  total_cost, total_quantity;
     String st, st2;
     double cost = Cart.getTotalCost();
@@ -22,6 +22,7 @@ public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
 
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
+        home = (Button) findViewById(R.id.gotostart);
         paymentsucess= findViewById(R.id.paymentSuccess);
         total_cost =findViewById(R.id.total_cost);
         total_cost.setText( cost + "");
@@ -29,7 +30,6 @@ public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
         total_quantity.setText(quantity+"");
 
         creditCard.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PaymentCart.this, GetCreditCard.class);
@@ -38,7 +38,6 @@ public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
         });
 
         paypal.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PaymentCart.this, GetPaypal.class);
@@ -46,20 +45,24 @@ public class PaymentCart extends androidx.appcompat.app.AppCompatActivity {
             }
         });
 
+       home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentCart.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         Intent intent = getIntent();
         String checkFlag= intent.getStringExtra("flag");
         if(checkFlag.equals("A")){
-            total(); }
+            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "Got the items" , android.widget.Toast.LENGTH_LONG ).show();
+           }
         if(checkFlag.equals("CC")) {
             creditText();
         }if(checkFlag.equals("PP")){
             paypalText();
         }
-    }
-
-    private void total() {
-//            cost= getIntent().getDoubleExtra("Total",0);
-//            total_cost.setText( cost + "");
     }
 
     private void paypalText() {
