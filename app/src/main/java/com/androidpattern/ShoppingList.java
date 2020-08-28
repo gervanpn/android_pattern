@@ -131,7 +131,6 @@ public class ShoppingList extends AppCompatActivity {
                 cartListLL.removeView((View) view.getParent());
                 //udpate items in Cart
                 Cart.removeItem(id);
-//                Toast.makeText(getApplicationContext(), Cart.getItemName(0), Toast.LENGTH_LONG).show();
                 // update empty cart message
                 emptyCartMsg();
             }
