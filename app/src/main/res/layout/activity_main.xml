@@ -12,18 +12,20 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="326dp"
-        android:layout_height="527dp"
+        android:layout_width="311dp"
+        android:layout_height="596dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
         android:padding="5dp"
         android:text="@string/welcome_text"
         android:textAlignment="center"
         android:textColor="#4CAF50"
-        android:textSize="40sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,9 +35,10 @@
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="52dp"
-        android:background="#FAF7F9"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/white_rounded_corners"
         android:fontFamily="serif"
         android:text="@string/login_btn"
         android:textAlignment="center"
@@ -45,6 +48,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

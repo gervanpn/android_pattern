@@ -15,12 +15,10 @@ Button loginBtn;
         setContentView(R.layout.activity_main);
         loginBtn = findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ShoppingList.class);
                 startActivity(intent);}
         });
     }
-
 }

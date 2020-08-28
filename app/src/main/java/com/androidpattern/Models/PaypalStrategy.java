@@ -2,12 +2,12 @@ package com.androidpattern.Models;
 
 public class PaypalStrategy implements PaymentStrategy {
 	
-	private String emailId;
+	private String email;
 	private String password;
 	
 	public PaypalStrategy(String email, String pwd){
-		this.emailId=email;
-		this.password=pwd;
+		this.email = email;
+		this.password = pwd;
 	}
 	
 	@Override
