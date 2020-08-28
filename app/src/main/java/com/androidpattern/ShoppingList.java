@@ -114,7 +114,7 @@ public class ShoppingList extends AppCompatActivity {
         paramsBtn.setMarginEnd(20);
         removeBtn.setLayoutParams(paramsBtn);
         removeBtn.setImageResource(R.drawable.ic_baseline_remove);
-        removeBtn.setBackgroundColor(getColor(R.color.colorRed));
+        removeBtn.setBackgroundColor(getColor(R.color.colorTransparent));
 
         //adding a new textview to the cart list layout to show the name of the newly-added item
         TextView newItemTV = new TextView(this);
