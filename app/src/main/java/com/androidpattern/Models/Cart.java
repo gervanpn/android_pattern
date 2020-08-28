@@ -1,6 +1,7 @@
 package com.androidpattern.Models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Cart {
 
@@ -17,8 +18,10 @@ public class Cart {
         return items.get(ind).getName();
     }
 
-    public static void removeItem(int index) {
-        items.remove(index);
+    public static void removeItem(int id) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) items.remove(i);
+        }
     }
 
     public static double getTotalCost() {

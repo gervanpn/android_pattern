@@ -68,7 +68,7 @@ public class ShoppingList extends AppCompatActivity {
                 Cart.addItem(item); //adding new item to cart list
                 Toast.makeText(getApplicationContext(), "Item added: " + item.getName(), Toast.LENGTH_SHORT).show();
 
-                updateCartView(item.getName(),  Cart.getQuantity() -1);
+                updateCartView(item.getName(),  item.getId());
 
                 resetForm();  //clearing the form after adding the item successfully
             }
