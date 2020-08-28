@@ -14,6 +14,10 @@ public class Cart {
         Cart.items.add(item);
     }
 
+    public static ArrayList<Item> getItems() {
+        return items;
+    }
+
     public static int getItemId(int index){
         return items.get(index).getId();
     }
