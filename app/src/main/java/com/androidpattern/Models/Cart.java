@@ -5,29 +5,33 @@ import java.util.ArrayList;
 public class Cart {
 
     static private ArrayList<Item> items = new ArrayList<>();
-    static private double totalCost = 0;
+
 
     private Cart() {
     }
 
     public static void addItem(Item item) {
-        items.add(item);
-        setTotalCost();
+        Cart.items.add(item);
+    }
+
+    public static String getItemName(int ind) {
+        return items.get(ind).getName();
+    }
+
+    public static void removeItem(int id) {
+        items.remove(id);
     }
 
     public static double getTotalCost() {
+        double totalCost = 0;
+        for (Item item : items) {
+            totalCost += item.getCost();
+        };
         return totalCost;
     }
 
     public static int getQuantity() {
         return items.size();
-    }
-
-    private static void setTotalCost() {
-        totalCost = 0;
-        for (Item item : items) {
-            totalCost += item.getCost();
-        }
     }
 
 }
