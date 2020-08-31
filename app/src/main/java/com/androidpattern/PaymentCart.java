@@ -17,6 +17,7 @@ public class PaymentCart extends AppCompatActivity {
     double cost = Cart.getTotalCost();
     int quantity = Cart.getQuantity();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +91,8 @@ public class PaymentCart extends AppCompatActivity {
         if(getIntent().getExtras().getString("value") != null) {
             st = getIntent().getExtras().getString("value");
             st2 = getIntent().getExtras().getString("value2");
-            paymentsucess.setText(st + st2 + " paid bill with Credit Card");
+            paymentsucess.setText(st + new Enceypt().encrypt(st2) + " paid bill with Credit Card");
+
         } else {
            Toast.makeText( PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
         }
