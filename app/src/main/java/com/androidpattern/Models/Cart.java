@@ -44,6 +44,9 @@ public class Cart {
         return items.size();
     }
 
+    public static void clearCart(){
+        items.clear();
+    }
     public static boolean getTaxSetting() {
         return switchState;
     }
@@ -61,5 +64,4 @@ public class Cart {
         taxRate = Settings.taxAmount();
         return taxRate;
     }
-
 }

@@ -59,6 +59,7 @@ public class PaymentCart extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Cart.clearCart();
                 Intent intent = new Intent(PaymentCart.this, MainActivity.class);
                 startActivity(intent);
                 finish();
