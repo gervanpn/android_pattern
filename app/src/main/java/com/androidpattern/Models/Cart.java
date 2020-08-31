@@ -1,15 +1,15 @@
 package com.androidpattern.Models;
 
-import android.util.Log;
+import com.androidpattern.Settings;
+
 import java.util.ArrayList;
 
 public class Cart {
 
     static private ArrayList<Item> items = new ArrayList<>();
-
-    private Cart() {
-    }
-
+    private Cart() { }
+    public static boolean switchState;
+    public static double taxRate;
     public static void addItem(Item item) {
         Cart.items.add(item);
     }
@@ -44,4 +44,24 @@ public class Cart {
         return items.size();
     }
 
+    public static void clearCart(){
+        items.clear();
+    }
+    public static boolean getTaxSetting() {
+        return switchState;
+    }
+
+    public static boolean setTaxSetting() {
+        switchState = Settings.setTaxes();
+        return switchState;
+    }
+
+    public static double getTaxRate() {
+        return taxRate;
+    }
+
+    public static double setTaxRate() {
+        taxRate = Settings.taxAmount();
+        return taxRate;
+    }
 }
