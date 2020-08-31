@@ -11,7 +11,7 @@ import com.androidpattern.Models.Cart;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentCart extends AppCompatActivity {
-    Button creditCard, paypal, home;
+    Button creditCard, paypal, home, goShopping;
     TextView paymentsucess,  total_cost, total_quantity;
     String st, st2;
     double cost = Cart.getTotalCost();
@@ -26,9 +26,10 @@ public class PaymentCart extends AppCompatActivity {
         creditCard = (Button) findViewById(R.id.credit_card);
         paypal = (Button) findViewById(R.id.paypal);
         home = (Button) findViewById(R.id.gotostart);
+        goShopping=(Button) findViewById(R.id.gotoshopping);
         paymentsucess = findViewById(R.id.paymentSuccess);
         total_cost = findViewById(R.id.total_cost);
-        total_cost.setText( cost + "");
+        total_cost.setText( String.format("%.2f", cost));
         total_quantity = findViewById(R.id.total_items);
         total_quantity.setText(quantity+"");
 
@@ -48,7 +49,15 @@ public class PaymentCart extends AppCompatActivity {
             }
         });
 
-       home.setOnClickListener(new View.OnClickListener() {
+        goShopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentCart.this, ShoppingList.class);
+                startActivity(intent);
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PaymentCart.this, MainActivity.class);

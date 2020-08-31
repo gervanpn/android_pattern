@@ -42,7 +42,7 @@ public class ShoppingList extends AppCompatActivity {
 
         //update cart list
         for (int i = 0; i < Cart.getQuantity(); i++) {
-            updateCartView(Cart.getItemName(i), Cart.getItemId(i));
+            updateCartView(Cart.getItemName(i), Cart.getItems().get(i).getCost(), Cart.getItemId(i));
         }
 
         //programing add button
@@ -68,7 +68,7 @@ public class ShoppingList extends AppCompatActivity {
                 Cart.addItem(item); //adding new item to cart list
                 Toast.makeText(getApplicationContext(), "Item added: " + item.getName(), Toast.LENGTH_SHORT).show();
 
-                updateCartView(item.getName(),  item.getId());
+                updateCartView(item.getName(), item.getCost(),  item.getId());
                 resetForm();  //clearing the form after adding the item successfully
             }
 
@@ -94,7 +94,7 @@ public class ShoppingList extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void updateCartView(final String name, final int id) {
+    private void updateCartView(final String name, double cost, final int id) {
         // update empty cart message
         emptyCartMsg();
 
@@ -119,7 +119,7 @@ public class ShoppingList extends AppCompatActivity {
         TextView newItemTV = new TextView(this);
         cartListLLCh.addView(newItemTV);
         newItemTV.setId(id);
-        newItemTV.setText(name);
+        newItemTV.setText(name + "   -   $" + String.format("%.2f", cost));
 
         final TextView finalNewItemTV = newItemTV;
         removeBtn.setOnClickListener(new View.OnClickListener() {

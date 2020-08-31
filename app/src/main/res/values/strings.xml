@@ -1,34 +1,43 @@
 <resources>
-    <string name = "app_name">Go Shopping</string>
-
-    <string name = "back_to_checkout">Back to Checkout</string>
-    <string name = "label_email">Email</string>
-    <string name = "label_password">Password</string>
-    <string name = "password_hint">Password</string>
-    <string name = "email_hint">Email</string>
-    <string name = "todo">TO DO</string>
-    <string name = "welcome_text">Hey boss!
+    <string name="app_name">Go Shopping</string>
+    <string name="back_to_checkout">Back to Checkout</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="todo">TO DO</string>
+    <string name="welcome_text">Hey boss!
         Use this App to go into the world of shopping at the lowest price, highest quality and next day delivery and service.
         ENTER HERE TO BUY ALL THE HAPPINESS YOU WANT ....</string>
-    <string name = "payment_text">Total cost to pay</string>
-    <string name = "credit_card">Credit Card</string>
-    <string name = "paypal">Paypal</string>
-    <string name = "login_btn">Go Shopping</string>
-    <string name = "email">Email</string>
-    <string name = "name">Name</string>
-    <string name = "expiry_date">Expiry Date (mm/yy)</string>
-    <string name = "card_number">Card Number</string>
-    <string name = "cvv">cvv</string>
-    <string name = "payment_method">Payment Method</string>
-    <string name = "total_cost">Total cost</string>
-    <string name = "total_items">Total items</string>
-    <string name = "add_items">Add items</string>
-    <string name = "item">Item</string>
-    <string name = "quantity_short">Qty</string>
-    <string name = "price">Price</string>
-    <string name = "empty_cart">Cart is empty!</string>
-    <string name = "spacer">-</string>
+    <string name="payment_text">Total cost to pay</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="paypal">Paypal</string>
+    <string name="login_btn">Go Shopping</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="expiry_date">Expiry Date (mm/yy)</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvv">cvv</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="total_cost">Total cost</string>
+    <string name="total_items">Total items</string>
+    <string name="add_items">Add items</string>
+    <string name="item">Item</string>
+    <string name="quantity_short">Qty</string>
+    <string name="price">Price</string>
+    <string name="empty_cart">Cart is empty!</string>
+    <string name="spacer">-</string>
     <string name="home">Home</string>
     <string name="items">Items</string>
     <string name="cart_is_empty">Cart is empty!</string>
+    <string name="tax">Tax</string>
+    <string name="total_with_tax">Total with tax</string>
+    <string name="go_shopping">Go Shopping</string>
+    <string name="settings">Settings</string>
+    <string name="settings_title">Go Shopping Settings:</string>
+    <string name="settings_save">S A V E</string>
+    <string name="setting_taxes">Calculate Taxes</string>
+    <string name="set_tax_title">Tax Rate</string>
+    <string name="set_tax_province">Province</string>
+
 </resources>
