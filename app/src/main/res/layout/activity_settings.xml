@@ -45,20 +45,10 @@
         android:textAllCaps="true"
         android:textColor="@color/colorAccent"
         android:textSize="14sp"
+        android:checked="false"
         app:layout_constraintBottom_toTopOf="@+id/set_taxes"
         app:layout_constraintStart_toStartOf="@+id/set_title"
         app:layout_constraintTop_toBottomOf="@+id/set_title" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/taxes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.5"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/set_taxes"
