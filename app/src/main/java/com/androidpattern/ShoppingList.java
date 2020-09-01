@@ -119,7 +119,7 @@ public class ShoppingList extends AppCompatActivity {
         TextView newItemTV = new TextView(this);
         cartListLLCh.addView(newItemTV);
         newItemTV.setId(id);
-        newItemTV.setText(name + "   -   $" + String.format("%.2f", cost));
+        newItemTV.setText(String.format("%s    -   $%.2f", name, cost));
 
         final TextView finalNewItemTV = newItemTV;
         removeBtn.setOnClickListener(new View.OnClickListener() {
