@@ -2,7 +2,7 @@ package com.androidpattern;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
-import com.androidpattern.Models.Cart;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,25 +11,16 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.androidpattern.Models.Cart;
-
 public class Settings extends AppCompatActivity {
 
     Button settings_save;
     EditText set_taxes;
     SwitchCompat settings_used;
-    boolean switchState = Cart.getTaxSetting();
-    double taxRate = Cart.getTaxRate();
 
-    public static boolean setTaxes() {
-        boolean switchState = Cart.getTaxSetting();
-        return switchState;
-    }
+    String taxRate;
+    boolean taxState;
 
-    public static double taxAmount() {
-        double taxRate = Cart.getTaxRate();
-        return taxRate;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +36,10 @@ public class Settings extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
 
                 if (isChecked) {
-                    switchState = true;
+                    taxState = true;
                     settings_used.setText("Taxes are On");
                 } else {
-                    switchState = false;
+                    taxState = false;
                     settings_used.setText("Taxes are Off");
                 }
             }
@@ -69,8 +60,6 @@ public class Settings extends AppCompatActivity {
     private void saveSettings() {
         //sending the user back to the main screen
         Intent intent = new Intent(Settings.this, MainActivity.class);
-        setTaxes();
-        taxAmount();
         startActivity(intent);
     }
 
