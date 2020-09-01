@@ -17,7 +17,7 @@ public class Settings extends AppCompatActivity {
     EditText set_taxes;
     SwitchCompat settings_used;
 
-    String taxRate;
+    double taxRate;
     boolean taxState;
 
 
@@ -48,18 +48,18 @@ public class Settings extends AppCompatActivity {
         settings_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                convertTax();
-                if (taxRate == null) { // check if tax amount set; if not it returns;
+                if (set_taxes.getText().toString() == null) { // check if tax amount set; if not it returns;
                     Toast.makeText(getApplicationContext(), "no tax set", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                convertTax();
                 saveSettings();
             }
         });
     }
 
     private void convertTax() {
-        taxRate = set_taxes.getText().toString();
+        taxRate = Double.parseDouble(set_taxes.getText().toString());
     }
 
     private void saveSettings() {
