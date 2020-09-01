@@ -48,7 +48,8 @@ public class Settings extends AppCompatActivity {
         settings_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (set_taxes.getText() == null) { // check if tax amount set; if not it returns;
+                convertTax();
+                if (taxRate == null) { // check if tax amount set; if not it returns;
                     Toast.makeText(getApplicationContext(), "no tax set", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -57,9 +58,14 @@ public class Settings extends AppCompatActivity {
         });
     }
 
+    private void convertTax() {
+        taxRate = set_taxes.getText().toString();
+    }
+
     private void saveSettings() {
         //sending the user back to the main screen
         Intent intent = new Intent(Settings.this, MainActivity.class);
+
         startActivity(intent);
     }
 

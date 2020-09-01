@@ -1,6 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/blank"
+        android:enabled="false"
+        android:title="User Info"
+        android:visible="true" />
     <item
         android:id="@+id/settings"
+        android:enabled="true"
         android:icon="@drawable/blue_cloud"
-        android:title="@string/settings" />
+        android:title="@string/settings"
+        android:visible="true"
+        android:tooltipText="@string/settings_title"/>
 </menu>
