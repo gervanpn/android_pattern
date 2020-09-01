@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.androidpattern.Settings;
 import com.androidpattern.Models.Cart;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -76,7 +76,10 @@ public class PaymentCart extends AppCompatActivity {
         }if(checkFlag.equals("PP")){
             paypalText();
         }
+
+        
     }
+
 
     private void paypalText() {
         if(getIntent().getExtras().getString("value") != null) {

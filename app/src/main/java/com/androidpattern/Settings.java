@@ -102,7 +102,6 @@ public class Settings extends AppCompatActivity {
 
     private void saveSettings() {
         //sending the user back to the main screen
-        saveData();
         Intent intent = new Intent(Settings.this, MainActivity.class);
         startActivity(intent);
     }
