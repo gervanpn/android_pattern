@@ -34,8 +34,6 @@ public class MainActivity<intent> extends AppCompatActivity {
         db.close();
         db = helper.getWritableDatabase();
         
-       // helper.onCreate(db);
-        
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
