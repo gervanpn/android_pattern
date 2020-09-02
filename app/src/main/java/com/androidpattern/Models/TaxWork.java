@@ -3,13 +3,13 @@ package com.androidpattern.Models;
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
-//public class TaxWork {
-//
-//    public static final String SHARED_PREFS = "sharedPrefs";
-//    public static final String TAXES = "set_taxes";
-//    public static final String SWITCH1 = "settings_used";
-//    private String text;
-//    private boolean switchOnOff;
+public class TaxWork {
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TAXES = "set_taxes";
+    public static final String SWITCH1 = "settings_used";
+    private String text;
+   private boolean switchOnOff;
 //
 //    public void saveData() {
 //        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -32,4 +32,4 @@ import android.widget.Toast;
 //        set_taxes.setText(text);
 //        settings_used.setChecked(switchOnOff);
 //    }
-//}
+}
