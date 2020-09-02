@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.androidpattern.Models.TaxWork;
 
 public class Settings extends AppCompatActivity {
