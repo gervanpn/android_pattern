@@ -9,14 +9,14 @@ import static android.content.Context.MODE_PRIVATE;
 public class TaxWork {
 private double _taxRate = 0.0;
 private boolean _isChecked = false;
-	
+
 	public static final String SHARED_PREFS = "sharedPrefs";
 	public static final String TAXES = "set_taxes";
 	public static final String SWITCH1 = "settings_used";
 	public static final String RATE = "taxRate";
-	
+
 	Context context;
-	
+
 	SharedPreferences sharedPreferences;
 	SharedPreferences.Editor editor;
 
@@ -46,6 +46,7 @@ public boolean getChecked(){
 //
         editor.putString(TAXES, String.format("%.2f", this._taxRate));
         editor.putBoolean(SWITCH1, this._isChecked);
+		editor.putFloat(RATE, _(float)_taxRate);
         System.out.println(this._isChecked);
         System.out.println(this._taxRate);
 //
@@ -57,10 +58,11 @@ public boolean getChecked(){
         sharedPreferences = context.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         _taxRate = tryParseDouble(sharedPreferences.getString(TAXES, ""));
         _isChecked = sharedPreferences.getBoolean(String.valueOf(SWITCH1), false);
+		_taxRate = sharedPreferences.getFloat(RATE, 0);
     }
 //
 public static double tryParseDouble(final String number){
-	
+
 	double result;
 	try {
 		result = Double.parseDouble(number);

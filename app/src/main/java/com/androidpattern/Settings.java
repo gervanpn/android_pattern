@@ -30,7 +30,7 @@ public class Settings extends AppCompatActivity {
     private String text;
     private boolean switchOnOff;
     private float rate;
-    
+
     TaxWork taxes;
 
     @Override
@@ -38,7 +38,7 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         taxes = new TaxWork(getApplicationContext());
-        
+
         settings_save = findViewById(R.id.settings_save);
         set_taxes = findViewById(R.id.set_taxes);
         settings_used = findViewById(R.id.settings_used);
@@ -101,7 +101,7 @@ public class Settings extends AppCompatActivity {
 //    }
 
     public void updateViews() {
-        
+
         set_taxes.setText(String.format("%.2f", taxes.getTaxRate()));
         settings_used.setChecked(taxes.getChecked());
 
