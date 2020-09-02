@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import com.androidpattern.Models.TaxWork;
 
 public class Settings extends AppCompatActivity {
 
     private Button settings_save;
+    private ImageButton ib_home, ib_basket;
     private EditText set_taxes;
     private SwitchCompat settings_used;
 
@@ -31,6 +33,8 @@ public class Settings extends AppCompatActivity {
         settings_save = findViewById(R.id.settings_save);
         set_taxes = findViewById(R.id.set_taxes);
         settings_used = findViewById(R.id.settings_used);
+        ib_basket = findViewById(R.id.ib_basket);
+        ib_home = findViewById(R.id.ib_home);
         taxes.loadData();
         updateViews();
         settings_used.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -62,6 +66,24 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        ib_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            //sending the user back to the main screen
+            public void onClick(View view) {
+                Intent intent = new Intent(Settings.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ib_basket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            //sending the user back to the main screen
+            public void onClick(View view) {
+                Intent intent = new Intent(Settings.this, ShoppingList.class);
+                startActivity(intent);
+            }
+        });
+
         taxes.loadData();
         updateViews();
     }
@@ -78,11 +100,8 @@ public class Settings extends AppCompatActivity {
     }
 
     private void saveSettings() {
-        //sending the user back to the main screen
-        taxes.saveData();
         //saveData();
-        Intent intent = new Intent(Settings.this, MainActivity.class);
-        startActivity(intent);
+        taxes.saveData();
     }
 
 }
