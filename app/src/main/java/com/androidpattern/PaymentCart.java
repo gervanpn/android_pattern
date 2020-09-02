@@ -1,16 +1,16 @@
 package com.androidpattern;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.androidpattern.Models.Cart;
 import com.androidpattern.Models.TaxWork;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentCart extends AppCompatActivity {
@@ -36,10 +36,10 @@ public class PaymentCart extends AppCompatActivity {
         
         taxes = new TaxWork(getApplicationContext());
         
-        creditCard = (Button) findViewById(R.id.credit_card);
-        paypal = (Button) findViewById(R.id.paypal);
-        home = (Button) findViewById(R.id.gotostart);
-        goShopping=(Button) findViewById(R.id.gotoshopping);
+        creditCard = findViewById(R.id.credit_card);
+        paypal = findViewById(R.id.paypal);
+        home = findViewById(R.id.gotostart);
+        goShopping = findViewById(R.id.gotoshopping);
         paymentsucess = findViewById(R.id.paymentSuccess);
         tax= findViewById(R.id.tax);
         total_with_tax= findViewById(R.id.total_with_tax);
@@ -133,6 +133,23 @@ public class PaymentCart extends AppCompatActivity {
         }else{
             tax.setText( "0.00" );
             total_with_tax.setText( String.format("%.2f", cost));
+        }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //respond to menu item selection
+        switch (item.getItemId()) {
+            case R.id.settings:
+                startActivity(new Intent(this, Settings.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

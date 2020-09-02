@@ -2,9 +2,7 @@ package com.androidpattern;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,14 +20,6 @@ public class Settings extends AppCompatActivity {
 
     float taxRate;
     boolean taxState;
-
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String TAXES = "set_taxes";
-    public static final String SWITCH1 = "settings_used";
-    public static final String RATE = "taxRate";
-    private String text;
-    private boolean switchOnOff;
-    private float rate;
 
     TaxWork taxes;
 
@@ -80,25 +70,6 @@ public class Settings extends AppCompatActivity {
     private void convertTax() {
         taxRate = (float) Double.parseDouble(set_taxes.getText().toString());
     }
-
-//    public void saveData() {
-//        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//
-//        editor.putString(TAXES, set_taxes.getText().toString());
-//        editor.putBoolean(SWITCH1, settings_used.isChecked());
-//        editor.putFloat(RATE, rate);
-//
-//        editor.apply();
-//        Toast.makeText(this, "Settings Saved", Toast.LENGTH_SHORT).show();
-//    }
-
-//    public void loadData() {
-//        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-//        text = sharedPreferences.getString(TAXES, "");
-//        switchOnOff = sharedPreferences.getBoolean(String.valueOf(SWITCH1), false);
-//        taxRate = sharedPreferences.getFloat(RATE, 0);
-//    }
 
     public void updateViews() {
 

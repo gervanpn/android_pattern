@@ -38,19 +38,19 @@ public class MainActivity<intent> extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.options_menu, menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //respond to menu item selection
-        switch (item.getItemId()) {
-            case R.id.settings:
-                startActivity(new Intent(this, Settings.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.options_menu, menu);
+            return true;
         }
+
+        public boolean onOptionsItemSelected(MenuItem item) {
+            //respond to menu item selection
+            switch (item.getItemId()) {
+                case R.id.settings:
+                    startActivity(new Intent(this, Settings.class));
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
     }
 }
