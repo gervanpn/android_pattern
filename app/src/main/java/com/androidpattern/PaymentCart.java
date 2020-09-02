@@ -1,14 +1,16 @@
 package com.androidpattern;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.androidpattern.Settings;
 import com.androidpattern.Models.Cart;
+import com.androidpattern.Models.TaxWork;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentCart extends AppCompatActivity {
@@ -22,20 +24,22 @@ public class PaymentCart extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TAXES = "set_taxes";
     public static final String SWITCH1 = "settings_used";
-    private String text;
     private boolean switchOnOff;
     float taxRate;
     public static final String RATE = "taxRate";
+    TaxWork taxes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_cart);
-
-        creditCard = (Button) findViewById(R.id.credit_card);
-        paypal = (Button) findViewById(R.id.paypal);
-        home = (Button) findViewById(R.id.gotostart);
-        goShopping=(Button) findViewById(R.id.gotoshopping);
+        
+        taxes = new TaxWork(getApplicationContext());
+        
+        creditCard = findViewById(R.id.credit_card);
+        paypal = findViewById(R.id.paypal);
+        home = findViewById(R.id.gotostart);
+        goShopping = findViewById(R.id.gotoshopping);
         paymentsucess = findViewById(R.id.paymentSuccess);
         tax= findViewById(R.id.tax);
         total_with_tax= findViewById(R.id.total_with_tax);
@@ -79,7 +83,8 @@ public class PaymentCart extends AppCompatActivity {
             }
         });
 
-        loadData();
+        taxes.loadData();
+        setData();
         calculateTax();
         Intent intent = getIntent();
         String checkFlag= intent.getStringExtra("flag");
@@ -91,15 +96,12 @@ public class PaymentCart extends AppCompatActivity {
         }if(checkFlag.equals("PP")){
             paypalText();
         }
-
-        
     }
-
 
     private void paypalText() {
         if(getIntent().getExtras().getString("value") != null) {
             st = getIntent().getExtras().getString("value");
-            paymentsucess.setText(st + " paid bill with Paypal");
+            paymentsucess.setText(String.format("%s paid bill with Paypal", st));
         } else {
             Toast.makeText( com.androidpattern.PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
         }
@@ -109,18 +111,16 @@ public class PaymentCart extends AppCompatActivity {
         if(getIntent().getExtras().getString("value") != null) {
             st = getIntent().getExtras().getString("value");
             st2 = getIntent().getExtras().getString("value2");
-            paymentsucess.setText(st + new Enceypt().encrypt(st2) + " paid bill with Credit Card");
+            paymentsucess.setText(String.format("%s paid bill with Credit Card", (st + new Enceypt().encrypt(st2)) ));
 
         } else {
            Toast.makeText( PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
         }
     }
 
-    public void loadData() {
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        text = sharedPreferences.getString(TAXES, "");
-        switchOnOff = sharedPreferences.getBoolean(String.valueOf(SWITCH1), false);
-        taxRate = sharedPreferences.getFloat(RATE, 0);
+    public void setData() {
+        switchOnOff = taxes.getChecked();
+        taxRate = (float)taxes.getTaxRate();
     }
 
     public void calculateTax(){
@@ -128,11 +128,28 @@ public class PaymentCart extends AppCompatActivity {
         if(switchOnOff){
             taxCost = TR *cost;
             tax.setText(String.format("%.2f", taxCost));
-            TT = taxCost+cost;
+            TT = taxCost + cost;
             total_with_tax.setText( String.format("%.2f", TT));
         }else{
             tax.setText( "0.00" );
             total_with_tax.setText( String.format("%.2f", cost));
+        }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //respond to menu item selection
+        switch (item.getItemId()) {
+            case R.id.settings:
+                startActivity(new Intent(this, Settings.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }
