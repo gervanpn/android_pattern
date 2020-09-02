@@ -20,21 +20,21 @@ public class SqLiteHelper extends SQLiteOpenHelper {
     private static final String ItemName = "Name";
     private static final String ItemPrice = "Price";
     private static final String ItemQnty = "Qnty";
-
+    SQLiteDatabase db;
     private static final int DATABASE_VERSION = 1;
     private static Context context;
     
-    static SqLiteHelper sqLiteHelper;// = new SqLiteHelper( context );
+    static SqLiteHelper sqLiteHelper;
     
-    public SqLiteHelper(Context context) {
+    private SqLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
         Message.message(context, "Started....");
     }
-    public static SqLiteHelper getInstance(Context _context){
+
+    public static SqLiteHelper getInstance(Context context){
         if (sqLiteHelper == null ){
-            //sqLiteHelper = new SqLiteHelper( _context );
-            
+            sqLiteHelper = new SqLiteHelper(context);
         }
         return sqLiteHelper;
     }

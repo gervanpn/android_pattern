@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,7 +28,7 @@ public class MainActivity<intent> extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginBtn);
         settings_shop = findViewById(R.id.settings_shop);
     
-        helper = new SqLiteHelper(this);
+        helper = SqLiteHelper.getInstance(this);
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
         db = helper.getWritableDatabase();
