@@ -81,7 +81,7 @@ public class Settings extends AppCompatActivity {
 
         editor.putString(TAXES, set_taxes.getText().toString());
         editor.putBoolean(SWITCH1, settings_used.isChecked());
-        editor.putFloat(RATE, rate);
+        editor.putFloat(RATE, taxRate);
 
         editor.apply();
         Toast.makeText(this, "Settings Saved", Toast.LENGTH_SHORT).show();
@@ -97,7 +97,6 @@ public class Settings extends AppCompatActivity {
     public void updateViews() {
         set_taxes.setText(text);
         settings_used.setChecked(switchOnOff);
-
     }
 
     private void saveSettings() {
