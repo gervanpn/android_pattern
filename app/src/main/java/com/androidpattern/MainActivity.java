@@ -3,7 +3,9 @@ package com.androidpattern;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,9 +13,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.androidpattern.Helpers.SqLiteHelper;
+
 public class MainActivity<intent> extends AppCompatActivity {
     Button loginBtn;
     ImageButton settings_shop;
+    
+    SqLiteHelper helper;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +28,14 @@ public class MainActivity<intent> extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loginBtn = findViewById(R.id.loginBtn);
         settings_shop = findViewById(R.id.settings_shop);
-
+    
+        helper = new SqLiteHelper(this);
+        db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
+        db.close();
+        db = helper.getWritableDatabase();
+        
+       // helper.onCreate(db);
+        
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,12 +43,13 @@ public class MainActivity<intent> extends AppCompatActivity {
                 startActivity(intent);}
         });
 
-//        settings_shop.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, ???.class);
-//                startActivity(intent);}
-//        });
+        settings_shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
+
+                }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

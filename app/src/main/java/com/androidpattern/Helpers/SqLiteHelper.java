@@ -22,12 +22,21 @@ public class SqLiteHelper extends SQLiteOpenHelper {
     private static final String ItemQnty = "Qnty";
 
     private static final int DATABASE_VERSION = 1;
-    private Context context;
-
-    private SqLiteHelper(Context context) {
+    private static Context context;
+    
+    static SqLiteHelper sqLiteHelper;// = new SqLiteHelper( context );
+    
+    public SqLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
         Message.message(context, "Started....");
+    }
+    public static SqLiteHelper getInstance(Context _context){
+        if (sqLiteHelper == null ){
+            //sqLiteHelper = new SqLiteHelper( _context );
+            
+        }
+        return sqLiteHelper;
     }
 
     @Override
@@ -51,9 +60,9 @@ public class SqLiteHelper extends SQLiteOpenHelper {
             db.execSQL(SQL_CREATE_USER_TABLE);
             db.execSQL(SQL_CREATE_CART_TABLE);
             db.execSQL(SQL_CREATE_ITEM_TABLE);
-            Message.message(this.context, "Tables Created");
+            Message.message(context, "Tables Created");
         } catch(Exception e) {
-            Message.message(this.context, e.getMessage());
+            Message.message(context, e.getMessage());
         }
 
 
