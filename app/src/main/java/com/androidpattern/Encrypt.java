@@ -1,14 +1,14 @@
 package com.androidpattern;
 
-public class Enceypt  implements Payment{
+public class Encrypt implements Payment{
 
     private String payment;
 
-    public Enceypt(String payment) {
+    public Encrypt(String payment) {
         this.payment = payment;
     }
 
-    public Enceypt(){}
+    public Encrypt(){}
 
     @Override
     public void creditText() {
