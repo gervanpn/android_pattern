@@ -42,11 +42,11 @@ public boolean getChecked(){
 
     public void saveData() {
         sharedPreferences = this.context.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor = sharedPreferences.edit();
 //
-        editor.putString(TAXES, String.format("%.2f", this._taxRate));
+        //editor.putString(TAXES, String.format("%.2f", this._taxRate));
         editor.putBoolean(SWITCH1, this._isChecked);
-		editor.putFloat(RATE, _(float)_taxRate);
+		editor.putFloat(RATE, (float)_taxRate);
         System.out.println(this._isChecked);
         System.out.println(this._taxRate);
 //
@@ -56,7 +56,7 @@ public boolean getChecked(){
 //
     public void loadData() {
         sharedPreferences = context.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        _taxRate = tryParseDouble(sharedPreferences.getString(TAXES, ""));
+        //_taxRate = tryParseDouble(sharedPreferences.getString(TAXES, ""));
         _isChecked = sharedPreferences.getBoolean(String.valueOf(SWITCH1), false);
 		_taxRate = sharedPreferences.getFloat(RATE, 0);
     }
