@@ -1,6 +1,8 @@
 package com.androidpattern;
 
-public class Encrypt implements Payment{
+import com.androidpattern.Interfaces.Ipayment;
+
+public class Encrypt implements Ipayment {
 
     private String payment;
 
@@ -16,7 +18,7 @@ public class Encrypt implements Payment{
     }
 
    public String encrypt( String CC){
-        return "@#$%$&*&+#@!~";
+        return "ENCRYPT";
     }
 
 

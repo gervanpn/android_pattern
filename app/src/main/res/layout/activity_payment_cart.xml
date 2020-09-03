@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PaymentCart">
 
+
     <TextView
         android:id="@+id/paymentText"
         android:layout_width="242dp"
@@ -198,8 +199,8 @@
 
     <TextView
         android:id="@+id/paymentSuccess"
-        android:layout_width="331dp"
-        android:layout_height="151dp"
+        android:layout_width="313dp"
+        android:layout_height="86dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
@@ -214,7 +215,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paypal"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/gotostart"
@@ -247,5 +248,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentSuccess"
         app:layout_constraintVertical_bias="0.561" />
+
+    <ImageButton
+        android:id="@+id/paymentOption_btn"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentSuccess"
+        app:srcCompat="@drawable/ic_baseline_checkout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

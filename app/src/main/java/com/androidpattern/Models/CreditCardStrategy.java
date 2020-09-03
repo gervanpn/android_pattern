@@ -1,6 +1,8 @@
 package com.androidpattern.Models;
 
-public class CreditCardStrategy implements PaymentStrategy {
+import com.androidpattern.Interfaces.IpaymentStrategy;
+
+public class CreditCardStrategy implements IpaymentStrategy {
 	
 	private String name;
 	private String cardNumber;
