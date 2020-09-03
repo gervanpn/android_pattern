@@ -1,6 +1,8 @@
 package com.androidpattern.PaymentOptionsHelper;
 
-public class MasterCard implements PaymentOP{
+import com.androidpattern.Interfaces.IpaymentOP;
+
+public class MasterCard implements IpaymentOP {
 
 
     @Override
