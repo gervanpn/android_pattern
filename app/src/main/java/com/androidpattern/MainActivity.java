@@ -50,6 +50,7 @@ public class MainActivity<intent> extends AppCompatActivity {
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
         db = helper.getWritableDatabase();
+        // testing of cipher encrypting
 //        try {
 //            SecretKey key = KeyGenerator.getInstance( "AES" ).generateKey();
 //            System.out.println(key);
