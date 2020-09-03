@@ -6,6 +6,7 @@ public class Encrypt implements Payment{
 
     public Encrypt(String payment) {
         this.payment = payment;
+        
     }
 
     public Encrypt(){}

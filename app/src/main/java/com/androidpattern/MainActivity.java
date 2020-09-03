@@ -13,8 +13,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.androidpattern.Helpers.SingletonClass;
+//import com.androidpattern.Helpers.SingletonClass;
 import com.androidpattern.Helpers.SqLiteHelper;
+
+//import java.io.UnsupportedEncodingException;
+//import java.security.InvalidKeyException;
+//import java.security.NoSuchAlgorithmException;
+//
+//import javax.crypto.BadPaddingException;
+//import javax.crypto.Cipher;
+//import javax.crypto.IllegalBlockSizeException;
+//import javax.crypto.KeyGenerator;
+//import javax.crypto.NoSuchPaddingException;
+//import javax.crypto.SecretKey;
 
 public class MainActivity<intent> extends AppCompatActivity {
     Button loginBtn;
@@ -23,6 +34,9 @@ public class MainActivity<intent> extends AppCompatActivity {
     SqLiteHelper helper;
     SQLiteDatabase db;
     
+    //Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+    
+   
     //SingletonClass singleton = SingletonClass.getInstance();
 
     @Override
@@ -36,7 +50,27 @@ public class MainActivity<intent> extends AppCompatActivity {
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
         db = helper.getWritableDatabase();
-        
+//        try {
+//            SecretKey key = KeyGenerator.getInstance( "AES" ).generateKey();
+//            System.out.println(key);
+//            cipher.init( Cipher.ENCRYPT_MODE, key);
+//            byte[] plainText  = "abcdefghijklmnopqrstuvwxyz".getBytes("UTF-8");
+//            byte[] cipherText = cipher.doFinal(plainText);
+//            System.out.println(plainText);
+//            System.out.println(cipherText);
+//            cipher.init(Cipher.DECRYPT_MODE, key);
+//            plainText = cipher.doFinal(cipherText);
+//            System.out.println(plainText);
+//        } catch ( NoSuchAlgorithmException | InvalidKeyException e ) {
+//            e.printStackTrace();
+//        } catch ( BadPaddingException e ) {
+//            e.printStackTrace();
+//        } catch ( UnsupportedEncodingException e ) {
+//            e.printStackTrace();
+//        } catch ( IllegalBlockSizeException e ) {
+//            e.printStackTrace();
+//        }
+
 //        singleton.setText("@string/app_name");
 //        String test = singleton.getText();
         
