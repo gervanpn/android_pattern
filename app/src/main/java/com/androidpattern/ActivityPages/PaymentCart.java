@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.ActivityPages;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,8 +11,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.androidpattern.MenuPages.Profile;
+import com.androidpattern.MenuPages.Settings;
 import com.androidpattern.Models.Cart;
+import com.androidpattern.Models.Encrypt;
 import com.androidpattern.Models.TaxWork;
+import com.androidpattern.PaymentFactory.PaymentOptions;
+import com.androidpattern.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 
@@ -100,7 +107,7 @@ public class PaymentCart extends AppCompatActivity {
         Intent intent = getIntent();
         String checkFlag= intent.getStringExtra("flag");
         if(checkFlag.equals("A")){
-            android.widget.Toast.makeText( com.androidpattern.PaymentCart.this , "Got the items" , android.widget.Toast.LENGTH_LONG ).show();
+            android.widget.Toast.makeText( PaymentCart.this , "Got the items" , android.widget.Toast.LENGTH_LONG ).show();
            }
         if(checkFlag.equals("CC")) {
             creditText();
@@ -114,7 +121,7 @@ public class PaymentCart extends AppCompatActivity {
             st = getIntent().getExtras().getString("value");
             paymentsucess.setText(String.format("%s paid bill with Paypal", st));
         } else {
-            Toast.makeText( com.androidpattern.PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
+            Toast.makeText( PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
         }
     }
 

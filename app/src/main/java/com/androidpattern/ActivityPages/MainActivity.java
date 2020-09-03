@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.ActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
@@ -15,6 +15,9 @@ import android.widget.ImageButton;
 
 //import com.androidpattern.Helpers.SingletonClass;
 import com.androidpattern.Helpers.SqLiteHelper;
+import com.androidpattern.MenuPages.Profile;
+import com.androidpattern.MenuPages.Settings;
+import com.androidpattern.R;
 
 //import java.io.UnsupportedEncodingException;
 //import java.security.InvalidKeyException;

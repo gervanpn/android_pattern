@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.Models;
 
 import com.androidpattern.Interfaces.Ipayment;
 

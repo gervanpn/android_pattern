@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.PaymentFactory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.androidpattern.PaymentOptionsHelper.Debit;
-import com.androidpattern.PaymentOptionsHelper.MasterCard;
-import com.androidpattern.PaymentOptionsHelper.PaymentFactory;
-import com.androidpattern.PaymentOptionsHelper.PaymentType;
+import com.androidpattern.Interfaces.IpaymentFactory;
+import com.androidpattern.R;
 
-public class PaymentOptions extends AppCompatActivity implements PaymentFactory {
+public class PaymentOptions extends AppCompatActivity implements IpaymentFactory {
 Debit debit;
 MasterCard masterCard;
 Button debit_btn , mc;
@@ -50,9 +48,7 @@ Button debit_btn , mc;
                     new MasterCard().pay();
                     break;
                 default:
-                    //
+
             }
-
-
     }
 }

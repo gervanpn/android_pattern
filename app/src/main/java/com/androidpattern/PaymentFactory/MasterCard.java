@@ -1,4 +1,4 @@
-package com.androidpattern.PaymentOptionsHelper;
+package com.androidpattern.PaymentFactory;
 
 import com.androidpattern.Interfaces.IpaymentOP;
 

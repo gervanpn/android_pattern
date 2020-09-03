@@ -1,7 +1,5 @@
 package com.androidpattern.Models;
 
-import com.androidpattern.Settings;
-
 import java.util.ArrayList;
 
 public class Cart {
