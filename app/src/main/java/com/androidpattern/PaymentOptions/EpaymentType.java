@@ -1,6 +1,6 @@
 package com.androidpattern.PaymentOptions;
 
-public enum PaymentType {
+public enum EpaymentType {
     Debit,
     MasterCard
 }
