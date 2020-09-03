@@ -1,4 +1,4 @@
-package com.androidpattern.PaymentOptions;
+package com.androidpattern.PaymentOptionsHelper;
 
 public enum PaymentType {
     Debit,

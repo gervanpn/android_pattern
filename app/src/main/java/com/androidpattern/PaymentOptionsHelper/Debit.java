@@ -1,4 +1,4 @@
-package com.androidpattern.PaymentOptions;
+package com.androidpattern.PaymentOptionsHelper;
 
 public class Debit implements PaymentOP {
     @Override

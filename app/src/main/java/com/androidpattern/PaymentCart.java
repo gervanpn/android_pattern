@@ -56,7 +56,7 @@ public class PaymentCart extends AppCompatActivity {
         goToPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PaymentCart.this, PamentOptions.class);
+                Intent intent = new Intent(PaymentCart.this, PaymentOptions.class);
                 startActivity(intent);
             }
         });
