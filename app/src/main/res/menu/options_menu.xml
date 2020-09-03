@@ -1,14 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/blank"
-        android:enabled="false"
+        android:id="@+id/userInfo"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="User Info"
         android:visible="true" />
     <item
         android:id="@+id/settings"
         android:enabled="true"
-        android:icon="@drawable/blue_cloud"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/settings"
         android:visible="true"
         android:tooltipText="@string/settings_title"/>
