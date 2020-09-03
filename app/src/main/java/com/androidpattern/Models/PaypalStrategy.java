@@ -1,6 +1,8 @@
 package com.androidpattern.Models;
 
-public class PaypalStrategy implements PaymentStrategy {
+import com.androidpattern.Interfaces.IpaymentStrategy;
+
+public class PaypalStrategy implements IpaymentStrategy {
 	
 	private String email;
 	private String password;
