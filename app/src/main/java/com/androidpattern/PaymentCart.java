@@ -113,7 +113,7 @@ public class PaymentCart extends AppCompatActivity {
         if(getIntent().getExtras().getString("value") != null) {
             st = getIntent().getExtras().getString("value");
             st2 = getIntent().getExtras().getString("value2");
-            paymentsucess.setText(String.format("%s paid bill with Credit Card", (st + new Encrypt().encrypt(st2)) ));
+            paymentsucess.setText(String.format("%s paid bill with Credit Card", (st + " Card# " + new Encrypt().encrypt(st2)) ));
 
         } else {
            Toast.makeText( PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
