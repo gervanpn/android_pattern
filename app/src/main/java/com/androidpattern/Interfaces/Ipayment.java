@@ -1,5 +1,5 @@
 package com.androidpattern.Interfaces;
 
-public interface Payment {
+public interface Ipayment {
     void creditText();
 }
