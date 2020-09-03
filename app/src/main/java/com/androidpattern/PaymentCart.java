@@ -1,5 +1,6 @@
 package com.androidpattern;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.androidpattern.Models.Cart;
 import com.androidpattern.Models.TaxWork;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
 
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal, home, goShopping;
@@ -136,9 +138,14 @@ public class PaymentCart extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("RestrictedApi")
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
+        if (menu instanceof MenuBuilder) {
+            MenuBuilder m = (MenuBuilder) menu;
+            m.setOptionalIconsVisible(true);
+        }
         return true;
     }
 
@@ -147,6 +154,9 @@ public class PaymentCart extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.settings:
                 startActivity(new Intent(this, Settings.class));
+                return true;
+            case R.id.userInfo:
+                startActivity(new Intent(this, Profile.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
