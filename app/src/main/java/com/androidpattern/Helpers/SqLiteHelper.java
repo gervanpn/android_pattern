@@ -32,7 +32,7 @@ public class SqLiteHelper extends SQLiteOpenHelper {
         Message.message(context, "Started....");
     }
 
-    public static SqLiteHelper getInstance(Context context){
+    public static synchronized SqLiteHelper getInstance(Context context){
         if (sqLiteHelper == null ){
             sqLiteHelper = new SqLiteHelper(context);
         }
