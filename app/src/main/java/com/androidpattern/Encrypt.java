@@ -8,6 +8,7 @@ public class Encrypt implements Ipayment {
 
     public Encrypt(String payment) {
         this.payment = payment;
+        
     }
 
     public Encrypt(){}

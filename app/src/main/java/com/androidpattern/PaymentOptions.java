@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.androidpattern.PaymentOptions.Debit;
-import com.androidpattern.PaymentOptions.MasterCard;
-import com.androidpattern.Interfaces.IpaymentFactory;
-import com.androidpattern.PaymentOptions.EpaymentType;
+import com.androidpattern.PaymentOptionsHelper.Debit;
+import com.androidpattern.PaymentOptionsHelper.MasterCard;
+import com.androidpattern.PaymentOptionsHelper.PaymentFactory;
+import com.androidpattern.PaymentOptionsHelper.PaymentType;
 
-public class PamentOptions extends AppCompatActivity implements IpaymentFactory {
+public class PaymentOptions extends AppCompatActivity implements PaymentFactory {
 Debit debit;
 MasterCard masterCard;
 Button debit_btn , mc;
@@ -25,7 +25,7 @@ Button debit_btn , mc;
       debit_btn.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-                CreatePayment(EpaymentType.Debit);
+                CreatePayment(PaymentType.Debit);
           }
       });
 
@@ -33,7 +33,7 @@ Button debit_btn , mc;
       mc.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            CreatePayment(EpaymentType.MasterCard);
+            CreatePayment(PaymentType.MasterCard);
           }
       });
     }
@@ -41,7 +41,7 @@ Button debit_btn , mc;
 
 
     @Override
-    public void CreatePayment(EpaymentType type) {
+    public void CreatePayment(PaymentType type) {
             switch (type){
                 case Debit:
                     new  Debit().pay();

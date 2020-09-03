@@ -1,9 +1,9 @@
 package com.androidpattern.Interfaces;
 
-import com.androidpattern.PaymentOptions.EpaymentType;
+import com.androidpattern.PaymentOptionsHelper.PaymentType;
 
 public interface IpaymentFactory {
-    void CreatePayment(EpaymentType type);
+    void CreatePayment(PaymentType type);
 
 
 }
