@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.androidpattern.Helpers.SingletonClass;
 import com.androidpattern.Helpers.SqLiteHelper;
 
 public class MainActivity<intent> extends AppCompatActivity {
@@ -21,6 +22,8 @@ public class MainActivity<intent> extends AppCompatActivity {
     
     SqLiteHelper helper;
     SQLiteDatabase db;
+    
+    //SingletonClass singleton = SingletonClass.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +32,13 @@ public class MainActivity<intent> extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginBtn);
         settings_shop = findViewById(R.id.settings_shop);
     
-        helper = new SqLiteHelper(this);
+        helper = new SqLiteHelper(getApplicationContext());
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
         db = helper.getWritableDatabase();
+        
+//        singleton.setText("@string/app_name");
+//        String test = singleton.getText();
         
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
