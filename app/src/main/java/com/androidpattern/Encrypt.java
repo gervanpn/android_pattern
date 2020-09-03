@@ -1,8 +1,8 @@
 package com.androidpattern;
 
-import com.androidpattern.Interfaces.Payment;
+import com.androidpattern.Interfaces.Ipayment;
 
-public class Encrypt implements Payment {
+public class Encrypt implements Ipayment {
 
     private String payment;
 

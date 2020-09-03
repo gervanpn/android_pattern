@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.androidpattern.Models.Cart;
@@ -16,7 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 
 public class PaymentCart extends AppCompatActivity {
-    Button creditCard, paypal, home, goShopping;
+    Button creditCard, paypal, home, goShopping ;
+    ImageButton goToPayment;
     TextView paymentsucess,  total_cost, total_quantity, tax, total_with_tax;
     String st, st2;
     Double taxCost, TR, TT;
@@ -49,8 +51,15 @@ public class PaymentCart extends AppCompatActivity {
         total_cost.setText( String.format("%.2f", cost));
         total_quantity = findViewById(R.id.total_items);
         total_quantity.setText(quantity+"");
+        goToPayment  = findViewById(R.id.paymentOption_btn);
 
-
+        goToPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PaymentCart.this, PamentOptions.class);
+                startActivity(intent);
+            }
+        });
         creditCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,6 +156,9 @@ public class PaymentCart extends AppCompatActivity {
             m.setOptionalIconsVisible(true);
         }
         return true;
+    }
+    public void goToPaymentOption(){
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
