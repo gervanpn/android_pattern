@@ -39,5 +39,6 @@
     <string name="setting_taxes">Calculate Taxes</string>
     <string name="set_tax_title">Tax Rate</string>
     <string name="set_tax_province">Province</string>
+    <string name="user_title">Enter Profile information</string>
 
 </resources>
