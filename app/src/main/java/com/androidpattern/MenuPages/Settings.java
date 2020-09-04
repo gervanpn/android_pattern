@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.MenuPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -10,7 +10,11 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.androidpattern.ActivityPages.MainActivity;
 import com.androidpattern.Models.TaxWork;
+import com.androidpattern.R;
+import com.androidpattern.ActivityPages.ShoppingList;
 
 public class Settings extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.Models;
 
 import com.androidpattern.Interfaces.Ipayment;
 
@@ -8,6 +8,7 @@ public class Encrypt implements Ipayment {
 
     public Encrypt(String payment) {
         this.payment = payment;
+        
     }
 
     public Encrypt(){}

@@ -1,4 +1,4 @@
-package com.androidpattern;
+package com.androidpattern.ActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -10,8 +10,11 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.androidpattern.ActivityPages.PaymentCart;
 import com.androidpattern.Models.Cart;
 import com.androidpattern.Models.Item;
+import com.androidpattern.R;
 
 public class ShoppingList extends AppCompatActivity {
 
