@@ -12,17 +12,14 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-
-//import com.androidpattern.Helpers.SingletonClass;
 import com.androidpattern.Helpers.SqLiteHelper;
 import com.androidpattern.MenuPages.Profile;
 import com.androidpattern.MenuPages.Settings;
 import com.androidpattern.R;
-
+//import com.androidpattern.Helpers.SingletonClass;
 //import java.io.UnsupportedEncodingException;
 //import java.security.InvalidKeyException;
 //import java.security.NoSuchAlgorithmException;
-//
 //import javax.crypto.BadPaddingException;
 //import javax.crypto.Cipher;
 //import javax.crypto.IllegalBlockSizeException;
@@ -32,14 +29,11 @@ import com.androidpattern.R;
 
 public class MainActivity<intent> extends AppCompatActivity {
     Button loginBtn;
-    ImageButton settings_shop;
-    
+    ImageButton settingsShop;
     SqLiteHelper helper;
     SQLiteDatabase db;
     
     //Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-    
-   
     //SingletonClass singleton = SingletonClass.getInstance();
 
     @Override
@@ -47,7 +41,7 @@ public class MainActivity<intent> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loginBtn = findViewById(R.id.loginBtn);
-        settings_shop = findViewById(R.id.settings_shop);
+        settingsShop = findViewById(R.id.settings_shop);
     
         helper = new SqLiteHelper(getApplicationContext());
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
@@ -74,7 +68,6 @@ public class MainActivity<intent> extends AppCompatActivity {
 //        } catch ( IllegalBlockSizeException e ) {
 //            e.printStackTrace();
 //        }
-
 //        singleton.setText("@string/app_name");
 //        String test = singleton.getText();
         
@@ -85,7 +78,7 @@ public class MainActivity<intent> extends AppCompatActivity {
                 startActivity(intent);}
         });
 
-        settings_shop.setOnClickListener(new View.OnClickListener() {
+        settingsShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);

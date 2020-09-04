@@ -2,8 +2,6 @@ package com.androidpattern.Interfaces;
 
 import com.androidpattern.PaymentFactory.PaymentType;
 
-public interface IpaymentFactory {
+public interface IPaymentFactory {
     void CreatePayment(PaymentType type);
-
-
 }

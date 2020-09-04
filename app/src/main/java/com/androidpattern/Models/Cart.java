@@ -44,5 +44,4 @@ public class Cart {
     public static void clearCart(){
         items.clear();
     }
-
 }

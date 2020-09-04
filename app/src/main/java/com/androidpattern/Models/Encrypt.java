@@ -1,26 +1,24 @@
 package com.androidpattern.Models;
 
-import com.androidpattern.Interfaces.Ipayment;
+import com.androidpattern.Interfaces.IPayment;
 
-public class Encrypt implements Ipayment {
+public class Encrypt implements IPayment {
 
-    private String payment;
+    private String _encryptPayment;
 
     public Encrypt(String payment) {
-        this.payment = payment;
-        
+        this._encryptPayment = payment;
     }
 
-    public Encrypt(){}
+    public Encrypt() {
+    }
 
     @Override
     public void creditText() {
-        encrypt(payment);
+        encrypt(_encryptPayment);
     }
 
-   public String encrypt( String CC){
+    public String encrypt(String creditCard) {
         return "ENCRYPT";
     }
-
-
 }
