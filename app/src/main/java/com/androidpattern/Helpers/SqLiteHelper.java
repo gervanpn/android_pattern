@@ -20,7 +20,7 @@ public class SqLiteHelper extends SQLiteOpenHelper {
     private static final String ITEMID = "item_id";
     private static final String ITEMNAME = "item_name";
     private static final String ITEMPRICE = "item_price";
-    private static final String ITEMQUANTITY = "item_uantity";
+    private static final String ITEMQUANTITY = "item_quantity";
 
     private static final int DATABASE_VERSION = 1;
     private static Context _context;
