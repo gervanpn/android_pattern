@@ -1,0 +1,29 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginBottom="18dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_cart_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/items"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_empty_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/cart_is_empty"
+            android:textSize="14sp"
+            android:visibility="visible"/>
+    </LinearLayout>
+</ScrollView>

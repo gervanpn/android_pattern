@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="32dp">
+
+    <include layout="@layout/layout_add_item" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp">
+
+        <include layout="@layout/layout_cart_list" />
+
+
+        <ImageButton
+            android:id="@+id/btn_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rl_fields"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/accent_rounded_corners"
+            android:clickable="false"
+            android:padding="6dp"
+            android:src="@drawable/ic_baseline_checkout" />
+    </LinearLayout>
+</LinearLayout>

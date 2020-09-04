@@ -8,34 +8,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#090808"
-    tools:context=".MainActivity">
+    tools:context=".ActivityPages.MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="326dp"
-        android:layout_height="527dp"
+        android:layout_width="311dp"
+        android:layout_height="596dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
         android:padding="5dp"
         android:text="@string/welcome_text"
         android:textAlignment="center"
         android:textColor="#4CAF50"
-        android:textSize="40sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/loginBtn"
-        android:layout_width="300dp"
+        android:layout_width="203dp"
         android:layout_height="55dp"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="52dp"
-        android:background="#FAF7F9"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/white_rounded_corners"
         android:fontFamily="serif"
         android:text="@string/login_btn"
         android:textAlignment="center"
@@ -44,7 +46,23 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ImageButton"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/settings_shop"
+        android:layout_width="53dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/white_rounded_corners"
+        android:contentDescription="@string/settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.626"
+        app:layout_constraintStart_toEndOf="@+id/loginBtn"
+        app:srcCompat="@drawable/blue_cloud" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

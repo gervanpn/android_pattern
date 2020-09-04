@@ -4,22 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GetCreditCard">
+    tools:context=".ActivityPages.GetCreditCard">
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/imgLogo"-->
-    <!--        android:layout_width="333dp"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:layout_marginStart="40dp"-->
-    <!--        android:layout_marginTop="1dp"-->
-    <!--        android:layout_marginEnd="40dp"-->
-    <!--        android:layout_marginBottom="214dp"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="1.0"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        tools:srcCompat="@drawable/paypal_logo" />-->
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="298dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="214dp"
+        android:foreground="@drawable/visa_mastercard_logo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22"
+        tools:srcCompat="@drawable/visa_mastercard_logo" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -39,7 +42,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="90dp"
-        android:text="Name"
+        android:text="@string/name"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +54,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="95dp"
-        android:text="Card Number"
+        android:text="@string/card_number"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextCardNumber"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,6 +70,7 @@
         android:autofillHints=""
         android:ems="10"
         android:textSize="18sp"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textcvv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -77,7 +81,7 @@
         android:layout_height="26dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="120dp"
-        android:text="cvv"
+        android:text="@string/cvv"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextcvv"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +97,7 @@
         android:autofillHints=""
         android:ems="10"
         android:textSize="18sp"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/textdateOfExpiry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -100,11 +105,11 @@
 
     <TextView
         android:id="@+id/textdateOfExpiry"
-        android:layout_width="119dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="90dp"
-        android:text="dateOfExpiry"
+        android:layout_width="193dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/expiry_date"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextdateOfExpiry"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,6 +125,7 @@
         android:autofillHints=""
         android:ems="10"
         android:textSize="18sp"
+        android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -127,13 +133,14 @@
     <Button
         android:id="@+id/buttonSubmit"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="216dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="60dp"
-        android:background="#FFEB3B"
-        android:text="Submit"
+        android:onClick="ButtonSubmit"
+        android:background="@drawable/yellow_rounded_corners"
+        android:text="@string/back_to_checkout"
         android:textColor="@color/colorPrimary"
         android:textColorLink="@color/colorAccent"
         android:textSize="18sp"
