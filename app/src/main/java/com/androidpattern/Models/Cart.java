@@ -4,23 +4,37 @@ import java.util.ArrayList;
 
 public class Cart {
 
+    //variables
     static private ArrayList<Item> items = new ArrayList<>();
-    private Cart() { }
 
-    public static void addItem(Item item) {
-        Cart.items.add(item);
+    //constructor
+    public Cart() {
     }
 
+    //getter methods
     public static ArrayList<Item> getItems() {
         return items;
     }
 
-    public static int getItemId(int index){
+    public static int getItemId(int index) {
         return items.get(index).getId();
     }
 
     public static String getItemName(int ind) {
         return items.get(ind).getName();
+    }
+
+    public static double getTotalCost() {
+        double totalCost = 0;
+        for (Item item : items) {
+            totalCost += item.getCost();
+        }
+        ;
+        return totalCost;
+    }
+
+    public static int getQuantity() {
+        return items.size();
     }
 
     public static void removeItem(int id) {
@@ -29,19 +43,13 @@ public class Cart {
         }
     }
 
-    public static double getTotalCost() {
-        double totalCost = 0;
-        for (Item item: items) {
-            totalCost += item.getCost();
-        };
-        return totalCost;
+    //setter methods
+    public static void addItem(Item item) {
+        Cart.items.add(item);
     }
 
-    public static int getQuantity() {
-        return items.size();
-    }
-
-    public static void clearCart(){
+    //helper methods
+    public static void clearCart() {
         items.clear();
     }
 
