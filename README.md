@@ -20,7 +20,7 @@ Moj -
 
 Roaa - 
 
-Aus - 
+Aus - Decorator Pattern , Factory Pattern
 
 
 
