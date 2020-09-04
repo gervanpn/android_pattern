@@ -1,5 +1,5 @@
 package com.androidpattern.Interfaces;
 
-public interface IpaymentOP {
+public interface IPaymentOP {
     void pay();
 }

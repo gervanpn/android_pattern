@@ -19,23 +19,22 @@ import com.androidpattern.Models.Encrypt;
 import com.androidpattern.Models.TaxWork;
 import com.androidpattern.PaymentFactory.PaymentOptions;
 import com.androidpattern.R;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 
 public class PaymentCart extends AppCompatActivity {
     Button creditCard, paypal, home, goShopping ;
-    ImageButton goToPayment;
-    TextView paymentsucess,  total_cost, total_quantity, tax, total_with_tax;
-    String st, st2;
-    Double taxCost, TR, TT;
+    ImageButton paymentSample;
+    TextView paymentSuccess,  totalCost, totalQuantity, tax, totalWithTax;
+    String strName, strCard, strEmail;
+    Double taxCost, totalTaxRate, totalTaxTotal;
     double cost = Cart.getTotalCost();
     int quantity = Cart.getQuantity();
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TAXES = "set_taxes";
     public static final String SWITCH1 = "settings_used";
-    private boolean switchOnOff;
+    private boolean _switchOnOff;
     float taxRate;
     public static final String RATE = "taxRate";
     TaxWork taxes;
@@ -51,16 +50,16 @@ public class PaymentCart extends AppCompatActivity {
         paypal = findViewById(R.id.paypal);
         home = findViewById(R.id.gotostart);
         goShopping = findViewById(R.id.gotoshopping);
-        paymentsucess = findViewById(R.id.paymentSuccess);
+        paymentSuccess = findViewById(R.id.paymentSuccess);
         tax= findViewById(R.id.tax);
-        total_with_tax= findViewById(R.id.total_with_tax);
-        total_cost = findViewById(R.id.total_cost);
-        total_cost.setText( String.format("%.2f", cost));
-        total_quantity = findViewById(R.id.total_items);
-        total_quantity.setText(quantity+"");
-        goToPayment  = findViewById(R.id.paymentOption_btn);
+        totalWithTax= findViewById(R.id.total_with_tax);
+        totalCost = findViewById(R.id.total_cost);
+        totalCost.setText( String.format("%.2f", cost));
+        totalQuantity = findViewById(R.id.total_items);
+        totalQuantity.setText(quantity+"");
+        paymentSample  = findViewById(R.id.paymentOption_btn);
 
-        goToPayment.setOnClickListener(new View.OnClickListener() {
+        paymentSample.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PaymentCart.this, PaymentOptions.class);
@@ -106,20 +105,20 @@ public class PaymentCart extends AppCompatActivity {
         calculateTax();
         Intent intent = getIntent();
         String checkFlag= intent.getStringExtra("flag");
-        if(checkFlag.equals("A")){
+        if(checkFlag.equals("shoppingList")){
             android.widget.Toast.makeText( PaymentCart.this , "Got the items" , android.widget.Toast.LENGTH_LONG ).show();
            }
-        if(checkFlag.equals("CC")) {
+        if(checkFlag.equals("creditCard")) {
             creditText();
-        }if(checkFlag.equals("PP")){
+        }if(checkFlag.equals("payPal")){
             paypalText();
         }
     }
 
     private void paypalText() {
         if(getIntent().getExtras().getString("value") != null) {
-            st = getIntent().getExtras().getString("value");
-            paymentsucess.setText(String.format("%s paid bill with Paypal", st));
+            strEmail = getIntent().getExtras().getString("value");
+            paymentSuccess.setText(String.format("%s paid bill with Paypal", strEmail));
         } else {
             Toast.makeText( PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
         }
@@ -127,9 +126,10 @@ public class PaymentCart extends AppCompatActivity {
 
     private void creditText() {
         if(getIntent().getExtras().getString("value") != null) {
-            st = getIntent().getExtras().getString("value");
-            st2 = getIntent().getExtras().getString("value2");
-            paymentsucess.setText(String.format("%s paid bill with Credit Card", (st + " Card# " + new Encrypt().encrypt(st2)) ));
+            strName = getIntent().getExtras().getString("value");
+            strCard = getIntent().getExtras().getString("value2");
+            paymentSuccess.setText(String.format("%s paid bill with Credit Card",
+                    (strName + " Card# " + new Encrypt().encrypt(strCard)) ));
 
         } else {
            Toast.makeText( PaymentCart.this , "No Data Entered" , Toast.LENGTH_LONG ).show();
@@ -137,20 +137,20 @@ public class PaymentCart extends AppCompatActivity {
     }
 
     public void setData() {
-        switchOnOff = taxes.getChecked();
+        _switchOnOff = taxes.getChecked();
         taxRate = (float)taxes.getTaxRate();
     }
 
     public void calculateTax(){
-       TR = (double) taxRate;
-        if(switchOnOff){
-            taxCost = TR *cost;
+       totalTaxRate = (double) taxRate;
+        if(_switchOnOff){
+            taxCost = totalTaxRate *cost;
             tax.setText(String.format("%.2f", taxCost));
-            TT = taxCost + cost;
-            total_with_tax.setText( String.format("%.2f", TT));
+            totalTaxTotal = taxCost + cost;
+            totalWithTax.setText( String.format("%.2f", totalTaxTotal));
         }else{
             tax.setText( "0.00" );
-            total_with_tax.setText( String.format("%.2f", cost));
+            totalWithTax.setText( String.format("%.2f", cost));
         }
     }
 
@@ -163,9 +163,6 @@ public class PaymentCart extends AppCompatActivity {
             m.setOptionalIconsVisible(true);
         }
         return true;
-    }
-    public void goToPaymentOption(){
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

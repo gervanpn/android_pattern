@@ -1,9 +1,8 @@
 package com.androidpattern.PaymentFactory;
 
-import com.androidpattern.Interfaces.IpaymentOP;
+import com.androidpattern.Interfaces.IPaymentOP;
 
-public class MasterCard implements IpaymentOP {
-
+public class MasterCard implements IPaymentOP {
 
     @Override
     public void pay() {
