@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "573608120783",
+    "firebase_url": "https://goshopping-af656.firebaseio.com",
+    "project_id": "goshopping-af656",
+    "storage_bucket": "goshopping-af656.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573608120783:android:cd20acb6992f7c550502ba",
+        "android_client_info": {
+          "package_name": "com.androidpattern"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573608120783-5lro2fgvpbmvh9tetabdb4ha2vhtums8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt59uNGGHZMiz9zdF0PPPGw_d4y6aUxG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573608120783-5lro2fgvpbmvh9tetabdb4ha2vhtums8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
