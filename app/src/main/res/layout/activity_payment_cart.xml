@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaymentCart">
+    tools:context=".ActivityPages.PaymentCart">
+
 
     <TextView
         android:id="@+id/paymentText"
         android:layout_width="242dp"
         android:layout_height="57dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:text="@string/payment_text"
         android:textAlignment="center"
@@ -47,14 +48,83 @@
         android:layout_height="38dp"
         android:layout_marginTop="38dp"
         android:layout_marginBottom="220dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textAlignment="textEnd"
         app:layout_constraintBottom_toTopOf="@+id/paypal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/total_label"
         app:layout_constraintTop_toBottomOf="@+id/paymentText"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/label_tax"
+        android:layout_width="107dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/tax"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/total_label2"
+        app:layout_constraintEnd_toStartOf="@+id/total_cost"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentText"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <TextView
+        android:id="@+id/tax"
+        android:layout_width="107dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="38dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/total_items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/total_label"
+        app:layout_constraintTop_toBottomOf="@+id/paymentText"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <TextView
+        android:id="@+id/total_label4"
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/total_with_tax"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/total_label2"
+        app:layout_constraintEnd_toStartOf="@+id/total_cost"
+        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentText"
+        app:layout_constraintVertical_bias="0.797" />
+
+    <TextView
+        android:id="@+id/total_with_tax"
+        android:layout_width="107dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="38dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/total_items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/total_label"
+        app:layout_constraintTop_toBottomOf="@+id/paymentText"
+        app:layout_constraintVertical_bias="0.761" />
 
     <TextView
         android:id="@+id/total_label2"
@@ -68,25 +138,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/credit_card"
         app:layout_constraintEnd_toStartOf="@+id/total_cost"
-        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_label"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.807" />
 
     <TextView
         android:id="@+id/total_items"
         android:layout_width="107dp"
         android:layout_height="38dp"
         android:layout_marginTop="38dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textAlignment="textEnd"
         app:layout_constraintBottom_toTopOf="@+id/paypal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/total_label2"
         app:layout_constraintTop_toBottomOf="@+id/paymentText"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.856" />
 
     <Button
         android:id="@+id/credit_card"
@@ -128,8 +199,8 @@
 
     <TextView
         android:id="@+id/paymentSuccess"
-        android:layout_width="331dp"
-        android:layout_height="151dp"
+        android:layout_width="313dp"
+        android:layout_height="86dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
@@ -144,7 +215,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paypal"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/gotostart"
@@ -157,9 +228,37 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentSuccess"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.561" />
+
+    <Button
+        android:id="@+id/gotoshopping"
+        android:layout_width="170dp"
+        android:layout_height="44dp"
+        android:background="@drawable/accent_rounded_corners"
+        android:text="@string/go_shopping"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentSuccess"
+        app:layout_constraintVertical_bias="0.561" />
+
+    <ImageButton
+        android:id="@+id/paymentOption_btn"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentSuccess"
+        app:srcCompat="@drawable/ic_baseline_checkout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

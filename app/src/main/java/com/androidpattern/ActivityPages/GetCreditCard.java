@@ -1,19 +1,17 @@
-package com.androidpattern;
+package com.androidpattern.ActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.androidpattern.Models.CreditCardStrategy;
+import com.androidpattern.R;
 
 public class GetCreditCard extends AppCompatActivity {
     Button buttonSubmit;
-    EditText name, card_no;
-    String st, st1;
+    EditText name, cardNo;
+    String strName, strCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +20,16 @@ public class GetCreditCard extends AppCompatActivity {
 
         buttonSubmit = (Button) findViewById( R.id.buttonSubmit );
         name = findViewById(R.id.editTextName);
-        card_no = findViewById(R.id.editTextCardNumber);
+        cardNo = findViewById(R.id.editTextCardNumber);
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GetCreditCard.this, PaymentCart.class);
-                st = name.getText().toString();
-                st1 = card_no.getText().toString();
-                intent.putExtra("flag", "CC");
-                intent.putExtra("value",st);
-                intent.putExtra("value2",st1);
+                strName = name.getText().toString();
+                strCard = cardNo.getText().toString();
+                intent.putExtra("flag", "creditCard");
+                intent.putExtra("value",strName);
+                intent.putExtra("value2",strCard);
                 startActivity(intent);
                 finish();
             }

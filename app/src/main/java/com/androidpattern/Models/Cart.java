@@ -1,14 +1,11 @@
 package com.androidpattern.Models;
 
-import android.util.Log;
 import java.util.ArrayList;
 
 public class Cart {
 
     static private ArrayList<Item> items = new ArrayList<>();
-
-    private Cart() {
-    }
+    private Cart() { }
 
     public static void addItem(Item item) {
         Cart.items.add(item);
@@ -44,4 +41,7 @@ public class Cart {
         return items.size();
     }
 
+    public static void clearCart(){
+        items.clear();
+    }
 }
