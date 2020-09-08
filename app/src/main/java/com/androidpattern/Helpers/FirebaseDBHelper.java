@@ -205,7 +205,7 @@ public class FirebaseDBHelper {
 				
 				returnValue = (City)city;
 				//returnValue = new City(city.getName(),city.getState(),city.getCountry(), city.isCapital(), city.getPopulation(),city.getRegions());
-				System.out.println("in db helper -> " + city.getName());
+				System.out.println("1 - in db helper -> " + city.getName());
 			}
 		});
 		//return city;

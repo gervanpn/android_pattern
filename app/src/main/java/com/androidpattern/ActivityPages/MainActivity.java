@@ -61,7 +61,7 @@ public class MainActivity<intent> extends AppCompatActivity {
         City city2 = null;// = new City();
         city2 = fbhelper.returnDocument("test","testdoc"  );
         //DocumentReference doc = fbhelper.getDocument( "test" ,"testdoc1");
-        System.out.println( fbhelper.returnValue.getName());
+        //System.out.println("2 - " +  city2.getName());
         //System.out.println(city2.getName());
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
