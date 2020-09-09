@@ -22,30 +22,60 @@ import com.google.firebase.firestore.auth.User;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executor;
 
 public class FirebaseDBHelper {
+	
+	private static final FirebaseDBHelper ourInstance = new FirebaseDBHelper();
+	
 	public enum _documentPath { Collection, Document, Field } ;
-	public _documentPath DocumentPath;
+	//public _documentPath DocumentPath;
 	public DocumentReference returnReference;
 	public City returnValue = new City();
 	
-	private FirebaseAuth mAuth;
+	private FirebaseAuth mAuth;// = FirebaseAuth.getInstance();
+	private String masterCollection;
+	private String masterDocument;
+	
 	FirebaseFirestore db = FirebaseFirestore.getInstance();
 	FirebaseUser user;
 	
 	static final String TAG = "Something TAG";
 	
-//	public FirebaseAuth getInstance () {
-//
-//
-//		return mAuth;
-//	}
+	public interface Update{
+		void updateUI();
+	}
 	
-	public FirebaseDBHelper () {
+	public void setCollection(String _collection){
+		masterCollection = _collection;
+	}
+	public String getCollection(){
+		return masterCollection;
+	}
+	
+	public void setDocument(String _document){
+		masterDocument = _document;
+	}
+	
+	public String getDocument(){
+		return masterDocument;
+	}
+	private FirebaseDBHelper () {
 		//super();
 		mAuth = FirebaseAuth.getInstance();
+		
 	}
+	
+	public static FirebaseDBHelper getInstance() {
+		return ourInstance;
+	}
+	
+//	public FirebaseDBHelper (String _collection, String _document) {
+//		//super();
+//		masterCollection = _collection;
+//		masterDocument = _document;
+//
+//		mAuth = FirebaseAuth.getInstance();
+//	}
 	
 	public void createAccount (final Context context, String _email , String _password) {
 		mAuth.createUserWithEmailAndPassword( _email , _password )
@@ -53,6 +83,7 @@ public class FirebaseDBHelper {
 					@Override
 					public void onComplete (@NonNull Task< AuthResult > task) {
 						if ( task.isSuccessful() ) {
+							//returnReference = db.collection(getCollection()).document(getDocument());
 							// Sign in success, update UI with the signed-in user's information
 							Log.d( TAG , "createUserWithEmail:success" );
 							user = mAuth.getCurrentUser();
@@ -68,9 +99,9 @@ public class FirebaseDBHelper {
 						// ...
 					}
 					
-					public void updateUI (FirebaseUser user) {
-					
-					}
+//					public void updateUI (FirebaseUser user) {
+//
+//					}
 				} );
 	}
 	
@@ -80,10 +111,12 @@ public class FirebaseDBHelper {
 					@Override
 					public void onComplete (@NonNull Task< AuthResult > task) {
 						if ( task.isSuccessful() ) {
+							//returnReference = db.collection(getCollection()).document(getDocument());
 							// Sign in success, update UI with the signed-in user's information
 							Log.d( TAG , "signInWithEmail:success" );
 							user = mAuth.getCurrentUser();
 							updateUI( user );
+							//update.updateUI();
 						} else {
 							// If sign in fails, display a message to the user.
 							Log.w( TAG , "signInWithEmail:failure" , task.getException() );
@@ -108,18 +141,19 @@ public class FirebaseDBHelper {
 			String name = _user.getDisplayName();
 			String email = _user.getEmail();
 			Uri photoUrl = _user.getPhotoUrl();
-			
+
 			// Check if user's email is verified
 			boolean emailVerified = _user.isEmailVerified();
-			
+
 			// The user's ID, unique to the Firebase project. Do NOT use this value to
 			// authenticate with your backend server, if you have one. Use
 			// FirebaseUser.getIdToken() instead.
 			String uid = _user.getUid();
-			
-			System.out.println(_user.getEmail());
+			//System.out.println("name - " + _user.getDisplayName());
+
+			System.out.println("email - " +_user.getEmail());
 		}
-		
+
 	}
 	
 	public String returnPath(_documentPath docPath){
@@ -180,10 +214,11 @@ public class FirebaseDBHelper {
 			City city; //= new City();
 			@Override
 			public void onSuccess(DocumentSnapshot documentSnapshot) {
-				//returnValue = documentSnapshot.toObject(City.class);
+				
 				if (documentSnapshot.exists()) {
-					update( documentSnapshot.toObject( City.class ) );
-					System.out.println("1 - in db helper -> " + returnValue.getName());
+					city = documentSnapshot.toObject(City.class);
+					updateUI();
+					System.out.println("line 186 db helper -> " + returnValue.getName());
 				} else {
 				
 				}
@@ -192,14 +227,17 @@ public class FirebaseDBHelper {
 				//returnValue = new City(city.getName(),city.getState(),city.getCountry(), city.isCapital(), city.getPopulation(),city.getRegions());
 				
 			}
+			public void updateUI(){
+				returnValue = city;
+			}
 		});
 		//return city;
 		
 		return (City) returnValue;
 		//return null;
 	}
-	public void update(City _city){
-		returnValue = _city;
-	}
+//	public void update(City _city){
+//		returnValue = _city;
+//	}
 }
 

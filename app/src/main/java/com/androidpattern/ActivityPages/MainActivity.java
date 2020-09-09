@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 //import com.androidpattern.Helpers.SingletonClass;
+import com.androidpattern.Helpers.FirebaseDBHelper;
 //import java.io.UnsupportedEncodingException;
 //import java.security.InvalidKeyException;
 //import java.security.NoSuchAlgorithmException;
@@ -42,7 +43,10 @@ public class MainActivity<intent> extends AppCompatActivity {
     ImageButton settingsShop;
     SqLiteHelper helper;
     SQLiteDatabase db;
-    FirebaseDBHelper fbhelper;
+    FirebaseDBHelper fbhelper = FirebaseDBHelper.getInstance();
+    final Handler delayHandler = new Handler();
+    
+    City city2;
     
     //Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
     //SingletonClass singleton = SingletonClass.getInstance();
@@ -55,27 +59,53 @@ public class MainActivity<intent> extends AppCompatActivity {
         settingsShop = findViewById(R.id.settings_shop);
     
         helper = new SqLiteHelper(getApplicationContext());
-        fbhelper = new FirebaseDBHelper();
+        //fbhelper = FirebaseDBHelper();
     
-        //fbhelper.createAccount(this, "ignite01@hotmail.com","password" );
+        fbhelper.createAccount(this, "some_email@email.com","password" );
+        fbhelper.setCollection( "test" );
+        fbhelper.setDocument( "testdoc1" );
+        
         fbhelper.signIn(this, "ignite01@hotmail.com","password" );
-        City city = new City("1","1","1",true,200000, Arrays.asList("west_coast", "norcal"));
-        fbhelper.createDocument( "test","testdoc", city );
-        fbhelper.addDocument( "test","testdoc1" );
-       
+        
+        
+        City city = new City("2","1","1",true,200000, Arrays.asList("west_coast", "norcal"));
+        fbhelper.createDocument( fbhelper.getCollection(),fbhelper.getDocument(), city );
+        //fbhelper.addDocument( "test","testdoc1" );
+//        FirebaseDBHelper.Update update = new FirebaseDBHelper.Update() {
+//            @Override
+//            public void updateUI () {
+                city2  = fbhelper.returnDocument(fbhelper.getCollection(),fbhelper.getDocument()  );
+                if (city2 == null || fbhelper.returnValue == null)
+                {
+
+                } else {
+                    System.out.println("line 83 MainActivity - " + city2.getName() );
+                }
+//            }
+//        };
        // City city2 = null;// = new City();
         
         //DocumentReference doc = fbhelper.getDocument( "test" ,"testdoc1");
         //System.out.println("2 - " +  city2.getName());
-        City city2  = fbhelper.returnDocument("test","testdoc"  );
+//        delayHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+
+//            }
+//        }, 10000);
         
-        if (city2 == null || fbhelper.returnValue == null )
-        {
-        
-        } else {
-            System.out.println( city2.getName() );
-        }
-        
+//        delayHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // Do something after 5s = 5000ms
+//                //buttons[inew][jnew].setBackgroundColor(Color.BLACK);
+//
+//
+
+    
+//            }
+//        }, 10000);
+//
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
         db = helper.getWritableDatabase();
@@ -118,6 +148,8 @@ public class MainActivity<intent> extends AppCompatActivity {
                 }
         });
     }
+    
+    
 
     @SuppressLint("RestrictedApi")
     public boolean onCreateOptionsMenu(Menu menu) {
