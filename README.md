@@ -4,6 +4,8 @@ https://github.com/gervanpn/android_pattern/pull/52
 
 IMPLEMENTATIONS:
    implementation 'com.android.support:design:24.0.0'
+   implementation 'com.google.firebase:firebase-auth:19.3.2'
+   implementation 'com.google.firebase:firebase-firestore:21.5.0'
 
 To build a play application 
 
