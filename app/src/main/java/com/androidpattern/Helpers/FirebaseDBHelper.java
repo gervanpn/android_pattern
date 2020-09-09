@@ -1,5 +1,7 @@
 package com.androidpattern.Helpers;
 
+import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
@@ -32,19 +34,20 @@ public class FirebaseDBHelper {
 	
 	static final String TAG = "Something TAG";
 	
-	public FirebaseAuth getInstance () {
-		
-		
-		return mAuth;
-	}
+//	public FirebaseAuth getInstance () {
+//
+//
+//		return mAuth;
+//	}
 	
 	public FirebaseDBHelper () {
+		super();
 		mAuth = FirebaseAuth.getInstance();
 	}
 	
-	public void createAccount (String _email , String _password) {
+	public void createAccount (final Context context, String _email , String _password) {
 		mAuth.createUserWithEmailAndPassword( _email , _password )
-				.addOnCompleteListener( ( Executor ) this , new OnCompleteListener< AuthResult >() {
+				.addOnCompleteListener(context.getMainExecutor() , new OnCompleteListener< AuthResult >() {
 					@Override
 					public void onComplete (@NonNull Task< AuthResult > task) {
 						if ( task.isSuccessful() ) {
@@ -69,9 +72,9 @@ public class FirebaseDBHelper {
 				} );
 	}
 	
-	public void signIn (String _email , String _password) {
+	public void signIn (final Context context,String _email , String _password) {
 		mAuth.signInWithEmailAndPassword( _email , _password )
-				.addOnCompleteListener( ( Executor ) this , new OnCompleteListener< AuthResult >() {
+				.addOnCompleteListener(context.getMainExecutor() , new OnCompleteListener< AuthResult >() {
 					@Override
 					public void onComplete (@NonNull Task< AuthResult > task) {
 						if ( task.isSuccessful() ) {
@@ -111,6 +114,8 @@ public class FirebaseDBHelper {
 			// authenticate with your backend server, if you have one. Use
 			// FirebaseUser.getIdToken() instead.
 			String uid = user.getUid();
+			
+			System.out.println(user.getEmail());
 		}
 		
 	}
@@ -118,39 +123,8 @@ public class FirebaseDBHelper {
 	public String returnPath(_documentPath docPath){
 		return "";
 		}
-		
-//		public String getField(String _collection, String _document){
-//			String returnField;
-//			DocumentReference docRef = db.collection(_collection).document(_document);
-//			docRef.get().addOnCompleteListener(new OnCompleteListener< DocumentSnapshot >() {
-//
-//				DocumentSnapshot document = null;
-//				@Override
-//				public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//
-//					if (task.isSuccessful()) {
-//						document = task.getResult();
-//						if (document.exists()) {
-//							Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-//							//returnField = document.getData(  ).toString();
-//						} else {
-//							Log.d(TAG, "No such document");
-//						}
-//
-//					} else {
-//						Log.d(TAG, "get failed with ", task.getException());
-//					}
-//
-//
-//
-//
-//				}
-//
-//
-//					});
-//			return returnField;
-//		}
-	
+
+
 	public void createDocument(String _collection, String _document, City city){
 		//City city = new City("Los Angeles", "CA", "USA",
 		//		false, 5000000L, Arrays.asList("west_coast", "sorcal"));
@@ -197,19 +171,23 @@ public class FirebaseDBHelper {
 	public City returnDocument(String _collection, String _document){
 		
 		DocumentReference docRef = db.collection(_collection).document(_document);
+//		returnValue = docRef.get().getResult().toObject( City.class );
+//		return returnValue;
+		
 		docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
 			City city; //= new City();
 			@Override
 			public void onSuccess(DocumentSnapshot documentSnapshot) {
 				city = documentSnapshot.toObject(City.class);
-				
-				returnValue = (City)city;
+
+				//_city =  (City) city;
+				returnValue = (City) city;
 				//returnValue = new City(city.getName(),city.getState(),city.getCountry(), city.isCapital(), city.getPopulation(),city.getRegions());
 				System.out.println("1 - in db helper -> " + city.getName());
 			}
 		});
 		//return city;
-		return returnValue;
+		return (City) returnValue;
 		//return null;
 	}
 }

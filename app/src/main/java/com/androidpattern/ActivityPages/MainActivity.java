@@ -2,6 +2,8 @@ package com.androidpattern.ActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
+
+import android.os.Handler;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.annotation.SuppressLint;
@@ -55,14 +57,24 @@ public class MainActivity<intent> extends AppCompatActivity {
         //List<String> regions = new ArrayList<String>;
         //regions.add("1");
         //regions.add("2");
-        City city = new City("1","1","1",true,200000, Arrays.asList("west_coast", "norcal"));
-        fbhelper.createDocument( "test","testdoc", city );
+        fbhelper.signIn(getApplicationContext(), "ignite01@hotmail.com","password" );
+        //City city = new City("1","1","1",true,200000, Arrays.asList("west_coast", "norcal"));
+        //fbhelper.createDocument( "test","testdoc", city );
         //fbhelper.addDocument( "test","testdoc1" );
-        City city2 = null;// = new City();
-        city2 = fbhelper.returnDocument("test","testdoc"  );
+        //fbhelper.
+       // City city2 = null;// = new City();
+        
         //DocumentReference doc = fbhelper.getDocument( "test" ,"testdoc1");
         //System.out.println("2 - " +  city2.getName());
-        //System.out.println(city2.getName());
+        City city2 = fbhelper.returnDocument("test","testdoc"  );
+        
+        if (city2 == null || fbhelper.returnValue == null )
+        {
+        
+        } else {
+            System.out.println( city2.getName() );
+        }
+        
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
         db = helper.getWritableDatabase();
