@@ -18,6 +18,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,10 +28,11 @@ public class FirebaseDBHelper {
 	public enum _documentPath { Collection, Document, Field } ;
 	public _documentPath DocumentPath;
 	public DocumentReference returnReference;
-	public City returnValue;
+	public City returnValue = new City();
 	
 	private FirebaseAuth mAuth;
 	FirebaseFirestore db = FirebaseFirestore.getInstance();
+	FirebaseUser user;
 	
 	static final String TAG = "Something TAG";
 	
@@ -41,19 +43,19 @@ public class FirebaseDBHelper {
 //	}
 	
 	public FirebaseDBHelper () {
-		super();
+		//super();
 		mAuth = FirebaseAuth.getInstance();
 	}
 	
 	public void createAccount (final Context context, String _email , String _password) {
 		mAuth.createUserWithEmailAndPassword( _email , _password )
-				.addOnCompleteListener(context.getMainExecutor() , new OnCompleteListener< AuthResult >() {
+				.addOnCompleteListener((Activity) context , new OnCompleteListener< AuthResult >() {
 					@Override
 					public void onComplete (@NonNull Task< AuthResult > task) {
 						if ( task.isSuccessful() ) {
 							// Sign in success, update UI with the signed-in user's information
 							Log.d( TAG , "createUserWithEmail:success" );
-							FirebaseUser user = mAuth.getCurrentUser();
+							user = mAuth.getCurrentUser();
 							updateUI( user );
 						} else {
 							// If sign in fails, display a message to the user.
@@ -74,13 +76,13 @@ public class FirebaseDBHelper {
 	
 	public void signIn (final Context context,String _email , String _password) {
 		mAuth.signInWithEmailAndPassword( _email , _password )
-				.addOnCompleteListener(context.getMainExecutor() , new OnCompleteListener< AuthResult >() {
+				.addOnCompleteListener((Activity) context , new OnCompleteListener< AuthResult >() {
 					@Override
 					public void onComplete (@NonNull Task< AuthResult > task) {
 						if ( task.isSuccessful() ) {
 							// Sign in success, update UI with the signed-in user's information
 							Log.d( TAG , "signInWithEmail:success" );
-							FirebaseUser user = mAuth.getCurrentUser();
+							user = mAuth.getCurrentUser();
 							updateUI( user );
 						} else {
 							// If sign in fails, display a message to the user.
@@ -100,22 +102,22 @@ public class FirebaseDBHelper {
 		updateUI( null );
 	}
 	
-	public void updateUI (FirebaseUser user) {
+	public void updateUI (FirebaseUser _user) {
 		if ( user != null ) {
 			// Name, email address, and profile photo Url
-			String name = user.getDisplayName();
-			String email = user.getEmail();
-			Uri photoUrl = user.getPhotoUrl();
+			String name = _user.getDisplayName();
+			String email = _user.getEmail();
+			Uri photoUrl = _user.getPhotoUrl();
 			
 			// Check if user's email is verified
-			boolean emailVerified = user.isEmailVerified();
+			boolean emailVerified = _user.isEmailVerified();
 			
 			// The user's ID, unique to the Firebase project. Do NOT use this value to
 			// authenticate with your backend server, if you have one. Use
 			// FirebaseUser.getIdToken() instead.
-			String uid = user.getUid();
+			String uid = _user.getUid();
 			
-			System.out.println(user.getEmail());
+			System.out.println(_user.getEmail());
 		}
 		
 	}
@@ -178,17 +180,26 @@ public class FirebaseDBHelper {
 			City city; //= new City();
 			@Override
 			public void onSuccess(DocumentSnapshot documentSnapshot) {
-				city = documentSnapshot.toObject(City.class);
-
+				//returnValue = documentSnapshot.toObject(City.class);
+				if (documentSnapshot.exists()) {
+					update( documentSnapshot.toObject( City.class ) );
+					System.out.println("1 - in db helper -> " + returnValue.getName());
+				} else {
+				
+				}
 				//_city =  (City) city;
-				returnValue = (City) city;
+				//returnValue = (City) city;
 				//returnValue = new City(city.getName(),city.getState(),city.getCountry(), city.isCapital(), city.getPopulation(),city.getRegions());
-				System.out.println("1 - in db helper -> " + city.getName());
+				
 			}
 		});
 		//return city;
+		
 		return (City) returnValue;
 		//return null;
+	}
+	public void update(City _city){
+		returnValue = _city;
 	}
 }
 

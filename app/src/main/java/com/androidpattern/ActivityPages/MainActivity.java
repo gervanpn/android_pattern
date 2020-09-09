@@ -23,7 +23,9 @@ import com.androidpattern.MenuPages.Settings;
 import com.androidpattern.R;
 import com.google.firebase.firestore.DocumentReference;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 //import com.androidpattern.Helpers.SingletonClass;
 //import java.io.UnsupportedEncodingException;
 //import java.security.InvalidKeyException;
@@ -54,19 +56,18 @@ public class MainActivity<intent> extends AppCompatActivity {
     
         helper = new SqLiteHelper(getApplicationContext());
         fbhelper = new FirebaseDBHelper();
-        //List<String> regions = new ArrayList<String>;
-        //regions.add("1");
-        //regions.add("2");
-        fbhelper.signIn(getApplicationContext(), "ignite01@hotmail.com","password" );
-        //City city = new City("1","1","1",true,200000, Arrays.asList("west_coast", "norcal"));
-        //fbhelper.createDocument( "test","testdoc", city );
-        //fbhelper.addDocument( "test","testdoc1" );
-        //fbhelper.
+    
+        //fbhelper.createAccount(this, "ignite01@hotmail.com","password" );
+        fbhelper.signIn(this, "ignite01@hotmail.com","password" );
+        City city = new City("1","1","1",true,200000, Arrays.asList("west_coast", "norcal"));
+        fbhelper.createDocument( "test","testdoc", city );
+        fbhelper.addDocument( "test","testdoc1" );
+       
        // City city2 = null;// = new City();
         
         //DocumentReference doc = fbhelper.getDocument( "test" ,"testdoc1");
         //System.out.println("2 - " +  city2.getName());
-        City city2 = fbhelper.returnDocument("test","testdoc"  );
+        City city2  = fbhelper.returnDocument("test","testdoc"  );
         
         if (city2 == null || fbhelper.returnValue == null )
         {
