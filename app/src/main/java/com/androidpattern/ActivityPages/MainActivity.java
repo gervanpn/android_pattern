@@ -2,6 +2,8 @@ package com.androidpattern.ActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
+
+import android.os.Handler;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.annotation.SuppressLint;
@@ -12,10 +14,16 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.androidpattern.Models.City;
+import com.androidpattern.Helpers.FirebaseDBHelper;
 import com.androidpattern.Helpers.SqLiteHelper;
 import com.androidpattern.MenuPages.Profile;
 import com.androidpattern.MenuPages.Settings;
 import com.androidpattern.R;
+import com.google.firebase.firestore.DocumentReference;
+
+import java.util.Arrays;
 //import com.androidpattern.Helpers.SingletonClass;
 //import java.io.UnsupportedEncodingException;
 //import java.security.InvalidKeyException;
@@ -32,6 +40,7 @@ public class MainActivity<intent> extends AppCompatActivity {
     ImageButton settingsShop;
     SqLiteHelper helper;
     SQLiteDatabase db;
+    FirebaseDBHelper fbhelper;
     
     //Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
     //SingletonClass singleton = SingletonClass.getInstance();
@@ -44,6 +53,28 @@ public class MainActivity<intent> extends AppCompatActivity {
         settingsShop = findViewById(R.id.settings_shop);
     
         helper = new SqLiteHelper(getApplicationContext());
+        fbhelper = new FirebaseDBHelper();
+        //List<String> regions = new ArrayList<String>;
+        //regions.add("1");
+        //regions.add("2");
+        fbhelper.signIn(getApplicationContext(), "ignite01@hotmail.com","password" );
+        //City city = new City("1","1","1",true,200000, Arrays.asList("west_coast", "norcal"));
+        //fbhelper.createDocument( "test","testdoc", city );
+        //fbhelper.addDocument( "test","testdoc1" );
+        //fbhelper.
+       // City city2 = null;// = new City();
+        
+        //DocumentReference doc = fbhelper.getDocument( "test" ,"testdoc1");
+        //System.out.println("2 - " +  city2.getName());
+        City city2 = fbhelper.returnDocument("test","testdoc"  );
+        
+        if (city2 == null || fbhelper.returnValue == null )
+        {
+        
+        } else {
+            System.out.println( city2.getName() );
+        }
+        
         db = SQLiteDatabase.openOrCreateDatabase(getDatabasePath( helper.DATABASE_NAME ),null);
         db.close();
         db = helper.getWritableDatabase();
